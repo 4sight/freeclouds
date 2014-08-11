@@ -2,7 +2,6 @@ var Stream = Backbone.View.extend({
   el: 'authenticated',
 
   initialize: function (){
-    console.log('This is the streaming view');
     $('div.authenticated').show();
  
     $('span.token').text(token);
@@ -25,5 +24,14 @@ var Stream = Backbone.View.extend({
           }
         }
       })
-    }
+    this.render();
+    },
+
+    render: function(){
+      SC.initialize({ client_id: setting.clientId });
+      SC.get("/tracks", {limit: 1}, function(tracks){
+        var track = tracks[0];
+      SC.oEmbed(track.uri, document.getElementById('tracks'));
+    });
+  }
 });
