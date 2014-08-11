@@ -1,4 +1,4 @@
-$(function(){
+// $(function(){
   var extractToken = function(hash) {
     var match = hash.match(/access_token=([^&]*)/);
     return !!match && match[1];
@@ -17,28 +17,7 @@ $(function(){
  
   var token = extractToken(document.location.hash);
   if (token) {
-    $('div.authenticated').show();
- 
-    $('span.token').text(token);
- 
-    $.ajax({
-        url: resourceHost + '/me',
-        data: {
-          client_id: setting.clientId
-        },
-        beforeSend: function (xhr) {
-          xhr.setRequestHeader('Authorization', "OAuth " + token);
-          xhr.setRequestHeader('Accept',        "application/json");
-        },
-        success: function (response) {
-          var container = $('span.user');
-          if (response) {
-            container.text(response.username);
-          } else {
-            container.text("An error occurred.");
-          }
-        }
-    });
+    new Stream();
   } else {
     $('div.authenticate').show();
  
@@ -49,4 +28,4 @@ $(function(){
  
     $("a.connect").attr("href", authUrl);
   }
-});
+// });
