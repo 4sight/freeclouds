@@ -20,29 +20,24 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+    
   </head>
   <body>
 
     <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
-
-        <li>Sass</li>
-
-
-        <li>Modernizr</li>
-
-
-        <li>Bourbon & Neat</li>
-
-
-        <li>UnderscoreJS</li>
-
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
+      <div class="authenticate hidden">
+        <a class="connect" href="">Connect</a>
+      </div>
+      <div class="authenticated hidden">
+        <p>
+          You are using token
+          <span class="token">[no token]</span>.
+        </p>
+        <p>
+          Your SoundCloud username is
+          <span class="user">[no username]</span>.
+        </p>
+      </div>
     </div>
 
     <!-- build:js scripts/vendor.js -->
@@ -54,7 +49,8 @@
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
+        <script src='scripts/soundcloudOath.js'></script>
+        <script src='scripts/router.js'></script>
         <!-- endbuild -->
 </body>
 </html>
