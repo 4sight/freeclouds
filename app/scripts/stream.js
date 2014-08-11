@@ -20,7 +20,7 @@ var Stream = Backbone.View.extend({
           if (response) {
             container.text(response.username);
           } else {
-            container.text("An error occurred.");
+            container.text('An error occurred.');
           }
         }
       })
@@ -29,9 +29,16 @@ var Stream = Backbone.View.extend({
 
     render: function(){
       SC.initialize({ client_id: setting.clientId });
-      SC.get("/tracks", {limit: 1}, function(tracks){
-        var track = tracks[0];
-      SC.oEmbed(track.uri, document.getElementById('tracks'));
-    });
+      SC.get("/tracks", {limit: 20}, function(tracks){
+        var track = tracks;
+        _.each(_.range(0,20), function(num){
+          $('body').append('<div id="sound' + num + '" />');
+          SC.oEmbed(track[num].uri, document.getElementById('sound' + num));
+        //   if (){
+        //     var text = $('div' + num).html();
+        //     str.search(sc-button-download)
+        // }
+      );
+    })
   }
 });
