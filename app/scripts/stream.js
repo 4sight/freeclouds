@@ -32,12 +32,18 @@ var Stream = Backbone.View.extend({
       SC.get("/tracks", {limit: 20}, function(tracks){
         var track = tracks;
         _.each(_.range(0,20), function(num){
-          $('body').append('<div id="sound' + num + '" />');
-          SC.oEmbed(track[num].uri, document.getElementById('sound' + num));
-        //   if (){
-        //     var text = $('div' + num).html();
-        //     str.search(sc-button-download)
-        // }
+          SC.oEmbed(track[num].uri, {}, function (oembed) {
+            $('.hero-unit').append(oembed.html);
+          });
+          // var text = $('div#sound' + num).html();
+          // var match = text.search('sc-button-download');
+          // console.log(match);
+          // if (match = -1){
+          //   console.log(num);
+          // } else {
+          //   $('div#sound' + num).removeClass('hidden');
+          // }
+        }
       );
     })
   }
