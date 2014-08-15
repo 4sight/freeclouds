@@ -10,13 +10,82 @@ body {
   margin: 20px;
 }
 
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+  header {
+    margin-left: 7.2%;
+    margin-right: 7.2%;
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  header {
+    margin-left: 7.2%;
+    margin-right: 7.2%;
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+  header {
+    margin-left: 7.2%;
+    margin-right: 7.2%;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+  header {
+    margin-left: 7.2%;
+    margin-right: 7.2%;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+  header {
+    margin-left: 7.2%;
+    margin-right: 7.2%;
+  }
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+  header {
+    margin-left: 7.2%;
+    margin-right: 7.2%;
+  }
+}
+
 .hidden {
   display: none;
 }
 
 header {
-  margin-left: 100px;
+  text-align: left;
   font-size: 14px;
+}
+
+.authenticated {
+  display: inline;
+}
+
+#logout {
+  float: right;
+  clear: both;
+  display: inline-block;
 }
 
 #token {
@@ -25,13 +94,15 @@ header {
 
 .sound {
   display: inline-block;
+  clear: both;
 }
 
 #wrapper {
-  margin: 0 auto;
   text-align: center;
+  clear: both;
+  padding-top: 20px;
 }
 
 iframe {
-  height: 150px;
+  height: 170px;
 }
