@@ -24,22 +24,22 @@
   </head>
   <body>
 
-    <div class="hero-unit">
+    <header>
       <div class="authenticate hidden">
         <a class="connect" href="">Connect</a>
       </div>
       <div class="authenticated hidden">
-        <p>
+        <p id='token'>
           You are using token
           <span class="token">[no token]</span>.
         </p>
         <p>
-          Your SoundCloud username is
-          <span class="user">[no username]</span>.
+          Welcome
+          <span class="user">[no username]</span>!
         </p>
       </div>
-      <div id='tracks'></div>
-    </div>
+    </header>
+    <div id='wrapper'></div>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->

@@ -47,10 +47,9 @@ var Stream = Backbone.View.extend({
         console.log(token);
         var track = tracks;
         _.each(_.range(0,30), function(num){
-          console.log(num);
-          console.log(track.collection);
           SC.oEmbed(track.collection[num].origin.uri, {}, function (oembed) {
-            $('.hero-unit').append('<div id="sound' + num + '">' + oembed.html + '</div>');
+            $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
+            $('iframe').append(' iframe="false"');
             // var str0 = $('#sound' + num).html();
             // var str1 = $(str0).contents();
             // var str2 = str1.prevObject[0].outerHTML;
