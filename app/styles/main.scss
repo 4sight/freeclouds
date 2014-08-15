@@ -14,13 +14,17 @@ body {
   display: none;
 }
 
+header {
+  margin-left: 100px;
+  font-size: 14px;
+}
+
 #token {
   display: none;
 }
 
 .sound {
   display: inline-block;
-  margin: 0 auto;
 }
 
 #wrapper {
@@ -30,5 +34,4 @@ body {
 
 iframe {
   height: 150px;
-  // width: 600px;
 }
