@@ -10,62 +10,33 @@ body {
   margin: 20px;
 }
 
-/* Smartphones (portrait) ----------- */
+$step1: 25.5%;
+$step2: 17%;
+$step3: 8.5%;
+
 @media only screen 
-and (max-width : 320px) {
+and (max-width : 655px) {
   header {
-    margin-left: 7.2%;
-    margin-right: 7.2%;
+    margin-right: $step1;
+    margin-left: $step1;
   }
 }
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
+@media only screen
+and (min-width : 655px)
+and (max-width : 955px) {
   header {
-    margin-left: 7.2%;
-    margin-right: 7.2%;
+    margin-right: $step2;
+    margin-left: $step2;
   }
 }
 
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
+@media only screen
+and (min-width : 955px)
+and (max-width : 1255px) {
   header {
-    margin-left: 7.2%;
-    margin-right: 7.2%;
-  }
-}
-
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-  header {
-    margin-left: 7.2%;
-    margin-right: 7.2%;
-  }
-}
-
-/* Desktops and laptops ----------- */
-@media only screen 
-and (min-width : 1224px) {
-  header {
-    margin-left: 7.2%;
-    margin-right: 7.2%;
-  }
-}
-
-/* Large screens ----------- */
-@media only screen 
-and (min-width : 1824px) {
-  header {
-    margin-left: 7.2%;
-    margin-right: 7.2%;
+    margin-right: $step3;
+    margin-left: $step3;
   }
 }
 

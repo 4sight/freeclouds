@@ -11,4 +11,4 @@ var Router = Backbone.Router.extend({
 	stream: function(){
 		new Stream();
 	}
-})
+});
