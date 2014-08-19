@@ -42,26 +42,26 @@ var Stream = Backbone.View.extend({
           var nothing;
           return response.username;
       }
-    }); 
-    SC.get('/me/activities?oauth_token=' + token, {limit: 30}, function(tracks){
+    });
+SC.get('/me/activities?oauth_token=' + token, {limit: 400}, function(tracks){
       var track = tracks;
-      console.log(tracks);
-      _.each(_.range(0,30), function(num){
-        SC.oEmbed(track.collection[num].origin.uri, {}, function (oembed) {
-          console.log(track.collection[num].origin.downloadable);
-          $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
-        });
-        // var str = $('#sound' + num).html();
-        // console.log(str);
-        // var match = text.search('sc-button-download');
-        // console.log(match);
-        // if (match = -1){
-        //   console.log(num);
-        // } else {
-        //   $('#sound' + num).removeClass('hidden');
-        // }
+      console.log(track);
+      var examined = 0;
+      var shown = 0;
+      while (shown < 40) {
+        console.log(track.collection[examined].origin.downloadable);
+        if (track.collection[examined].origin.downloadable == true) {
+          console.log(examined + ' is downloadable');
+          SC.oEmbed(track.collection[examined].origin.uri, {}, function (oembed) {
+            $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
+          });
+          shown++;
         }
-      );
-    })
-  }
-});
+        // else if (track.collection[num].origin.downloadable = 'false') {
+        //     console.log("I'm not downloadable");}
+          else {console.log(examined + ' is not downloadable');}
+          examined++;
+        }
+      });
+    }
+  });

@@ -12,3 +12,6 @@ var Router = Backbone.Router.extend({
 		new Stream();
 	}
 });
+
+new Router();
+Backbone.history.start();

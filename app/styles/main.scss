@@ -10,15 +10,16 @@ body {
   margin: 20px;
 }
 
-$step1: 25.5%;
-$step2: 17%;
-$step3: 8.5%;
+$header1: 25.5%;
+$header2: 17%;
+$header3: 12.5%;
+$header4: 8%;
 
 @media only screen 
 and (max-width : 655px) {
   header {
-    margin-right: $step1;
-    margin-left: $step1;
+    margin-right: $header1;
+    margin-left: $header1;
   }
 }
 
@@ -26,8 +27,8 @@ and (max-width : 655px) {
 and (min-width : 655px)
 and (max-width : 955px) {
   header {
-    margin-right: $step2;
-    margin-left: $step2;
+    margin-right: $header2;
+    margin-left: $header2;
   }
 }
 
@@ -35,8 +36,16 @@ and (max-width : 955px) {
 and (min-width : 955px)
 and (max-width : 1255px) {
   header {
-    margin-right: $step3;
-    margin-left: $step3;
+    margin-right: $header3;
+    margin-left: $header3;
+  }
+}
+
+@media only screen
+and (min-width : 1255px) {
+  header {
+    margin-right: $header4;
+    margin-left: $header4;
   }
 }
 
