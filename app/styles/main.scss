@@ -4,10 +4,15 @@
 
 // Custom Styles
 body {
-  background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #FF6F00;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 
 $header1: 25.5%;
@@ -62,7 +67,7 @@ header {
   display: inline;
 }
 
-#logout {
+#disconnect {
   float: right;
   clear: both;
   display: inline-block;

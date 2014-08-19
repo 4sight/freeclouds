@@ -24,9 +24,6 @@
   </head>
   <body>
     <header>
-      <div class='authenticate hidden'>
-        <a class='connect' href=''>Connect</a>
-      </div>
       <div class='authenticated hidden'>
         <p id='token'>
           You are using token
@@ -36,8 +33,12 @@
             <span class='user'></span>!
           </span>
       </div>
-      <span id='logout'>Logout</span>
+      <span id='disconnect'><a href=''>Disconnect</a></span>
     </header>
+    <h1>FreeCloud</h1>
+    <div class='authenticate hidden'>
+      <a class='connect' href=''>Connect</a>
+    </div>
     <div id='wrapper'></div>
 
     <!-- build:js scripts/vendor.js -->
@@ -50,8 +51,8 @@
 
         <!-- build:js scripts/main.js -->
         <script src="//connect.soundcloud.com/sdk.js"></script>
-        <script src='scripts/router.js'></script>
         <script src='scripts/connect.js'></script>
+        <script src='scripts/router.js'></script>
         <script src='scripts/stream.js'></script>
         <script src='scripts/soundcloudOath.js'></script>
 </body>

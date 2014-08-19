@@ -1,5 +1,5 @@
 var Stream = Backbone.View.extend({
-  className: 'authenticated',
+  el: 'body',
 
   initialize: function (){
     $('div.authenticated').show();
