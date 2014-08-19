@@ -27,6 +27,7 @@ var Stream = Backbone.View.extend({
     },
 
   render: function(){
+    $('div#home').hide();
     SC.initialize({ client_id: setting.clientId });
     console.log(setting.clientId);
     $.ajax({

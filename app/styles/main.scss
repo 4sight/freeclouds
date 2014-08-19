@@ -11,8 +11,58 @@ body {
 
 h1 {
   text-align: center;
-  color: #FF6F00;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-size: 50px;
+  margin: 0px;
+  color: #333333;
+}
+
+h2 {
+  color: #EEEEEE;
+  text-align: center;
+  font-size: 18px;
+  margin: 15px;
+  font-weight: normal;
+}
+
+.authenticate {
+  color: #111111;
+  background: linear-gradient(359deg, #CCCCCC, #DDDDDD);
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 99px;
+  height: 35px;
+  width: 280px;
+  text-align: center;
+  padding-top: 6px;
+  font-size: 14px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  a {
+    text-decoration: none;
+  }
+  a:visited {
+    color: #111111;
+  }
+}
+
+.connectHover {
+  box-shadow: 0 0 6px black;
+}
+
+#home {
+  background-color: #FF6F00;
+  height: 330px;
+  width: 500px;
+  margin: 0 auto;
+  border-top-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  margin-top: 10%;
+}
+
+#homeLogo {
+  text-align: center;
+  padding-top: 10px;
 }
 
 $header1: 25.5%;
