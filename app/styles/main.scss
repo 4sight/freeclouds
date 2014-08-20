@@ -54,7 +54,7 @@ a.connect {
 
 #home {
   background-color: #FF6F00;
-  height: 400px;
+  height: 350px;
   width: 500px;
   margin: 0 auto;
   border-top-left-radius: 14px;
@@ -139,10 +139,12 @@ header {
   display: inline;
 }
 
-#disconnect {
+#number {
   float: right;
   clear: both;
   display: inline-block;
+  position: relative;
+  top: -4px;
 }
 
 #token {

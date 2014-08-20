@@ -44,7 +44,9 @@ var Stream = Backbone.View.extend({
           return response.username;
       }
     });
-    var number = document.getElementById('number').value;
+    $('input#box').keyup(function(){
+      var number = $(this).val();
+    });
     console.log(number);
     SC.get('/me/activities?oauth_token=' + token, {limit: 1000}, function(tracks){
       var track = tracks;

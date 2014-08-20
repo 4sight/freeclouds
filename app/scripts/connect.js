@@ -7,7 +7,7 @@ var Connect = Backbone.View.extend({
 
   render: function(){
     $('span#welcome').hide();
-    $('span#disconnect').hide();
+    $('span#number').hide();
     $('div.authenticate').mouseenter(function(){
         $('div.authenticate').addClass('connectHover');
       }
