@@ -18,6 +18,8 @@
   var token = extractToken(document.location.hash);
   if (token) {
     new Stream();
+  } else if (number > 200 || number < 1) {
+    window.alert('Please enter a number between 1 and 200');
   } else {
     $('div.authenticate').show();
  

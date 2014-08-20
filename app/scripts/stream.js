@@ -1,10 +1,6 @@
 var Stream = Backbone.View.extend({
   el: 'body',
 
-  events: {
-    'click span#disconnect' : 'connect'
-  },
-
   initialize: function (){
     $('div.authenticated').show();
     $('span.token').text(token);
@@ -48,12 +44,14 @@ var Stream = Backbone.View.extend({
           return response.username;
       }
     });
-    SC.get('/me/activities?oauth_token=' + token, {limit: 400}, function(tracks){
+    var number = document.getElementById('number').value;
+    console.log(number);
+    SC.get('/me/activities?oauth_token=' + token, {limit: 1000}, function(tracks){
       var track = tracks;
       console.log(track);
       var examined = 0;
       var shown = 0;
-      while (shown < 40) {
+      while (shown < number) {
         if (track.collection[examined].origin.downloadable == true) {
           SC.oEmbed(track.collection[examined].origin.uri, {}, function (oembed) {
             $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');

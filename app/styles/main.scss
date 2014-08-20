@@ -38,12 +38,14 @@ h2 {
   padding-top: 6px;
   font-size: 14px;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
-  a {
-    text-decoration: none;
-  }
+  text-decoration: none;
   a:visited {
     color: #111111;
   }
+}
+
+a.connect {
+  text-decoration: none;
 }
 
 .connectHover {
