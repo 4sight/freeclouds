@@ -52,7 +52,7 @@ h2 {
 
 #home {
   background-color: #FF6F00;
-  height: 350px;
+  height: 400px;
   width: 500px;
   margin: 0 auto;
   border-top-left-radius: 14px;
@@ -62,7 +62,7 @@ h2 {
 
 #homeLogo {
   text-align: center;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 $headerTiny: 2%;
@@ -160,4 +160,15 @@ header {
 
 iframe {
   height: 170px;
+}
+
+.number {
+  text-align: center;
+  display: inline;
+  font-size: 16px;
+}
+
+#number {
+  text-align: center;
+  margin-bottom: 20px;
 }
