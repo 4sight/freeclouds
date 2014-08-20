@@ -5,10 +5,6 @@ var Connect = Backbone.View.extend({
     this.render();
     },
 
-  events: {
-    'click span#disconnect' : 'connect'
-  },
-
   render: function(){
     $('span#welcome').hide();
     $('span#disconnect').hide();

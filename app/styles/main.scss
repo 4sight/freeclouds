@@ -21,7 +21,7 @@ h2 {
   color: #EEEEEE;
   text-align: center;
   font-size: 18px;
-  margin: 15px;
+  margin: 25px;
   font-weight: normal;
 }
 
@@ -52,7 +52,7 @@ h2 {
 
 #home {
   background-color: #FF6F00;
-  height: 330px;
+  height: 350px;
   width: 500px;
   margin: 0 auto;
   border-top-left-radius: 14px;
@@ -65,12 +65,32 @@ h2 {
   padding-top: 10px;
 }
 
+$headerTiny: 2%;
+$header0: 5%;
 $header1: 25.5%;
 $header2: 17%;
 $header3: 12.5%;
 $header4: 8%;
 
 @media only screen 
+and (max-width : 319px) {
+  header {
+    margin-right: $headerTiny;
+    margin-left: $headerTiny;
+  }
+}
+
+@media only screen 
+and (min-width : 319px)
+and (max-width : 439px) {
+  header {
+    margin-right: $header0;
+    margin-left: $header0;
+  }
+}
+
+@media only screen 
+and (min-width : 439px)
 and (max-width : 655px) {
   header {
     margin-right: $header1;
