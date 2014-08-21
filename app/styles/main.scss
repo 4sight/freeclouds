@@ -54,7 +54,7 @@ a.connect {
   box-shadow: 0 0 6px black;
 }
 
-#home {
+#home, #homeHalo {
   background-color: #FF6F00;
   height: 350px;
   width: 500px;
@@ -67,13 +67,6 @@ a.connect {
 }
 
 #homeHalo {
-  background-color: #FF6F00;
-  height: 350px;
-  width: 500px;
-  margin: 0 auto;
-  border-top-left-radius: 14px;
-  border-bottom-right-radius: 14px;
-  margin-top: 10%;
   box-shadow: 0 0 50px 10px white;
 }
 
@@ -103,6 +96,14 @@ and (max-width : 439px) {
   header {
     margin-right: $header0;
     margin-left: $header0;
+  }
+}
+
+@media only screen 
+and (max-width : 539px) {
+  #home, #homeHalo {
+  height: 400px;
+  width: 300px;
   }
 }
 
