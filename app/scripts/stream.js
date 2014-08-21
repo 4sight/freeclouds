@@ -52,7 +52,7 @@ var Stream = Backbone.View.extend({
       console.log(track);
       var examined = 0;
       var shown = 0;
-      while (shown < number) {
+      while (shown < 40) {
         if (track.collection[examined].origin.downloadable == true) {
           SC.oEmbed(track.collection[examined].origin.uri, {}, function (oembed) {
             $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');

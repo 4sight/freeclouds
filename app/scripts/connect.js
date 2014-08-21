@@ -9,9 +9,8 @@ var Connect = Backbone.View.extend({
     $('span#welcome').hide();
     $('span#number').hide();
     $('div.authenticate').mouseenter(function(){
-        $('div.authenticate').addClass('connectHover');
-      }
-    );
+      $('div.authenticate').addClass('connectHover');
+    });
     $('div.authenticate').mouseleave(function(){
       $('div.authenticate').removeClass('connectHover');
       }
