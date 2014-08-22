@@ -148,7 +148,13 @@ $header4: 8%;
 @media only screen 
 and (min-width : 319px)
 and (max-width : 439px) {
+  // #welcome, #number {
+  //   margin: 0 auto;
+  //   float: none;
+  //   padding-top: 15px;
+  // }
   header {
+    // text-align: center;
     margin-right: $header0;
     margin-left: $header0;
   }
@@ -165,7 +171,13 @@ and (max-width : 539px) {
 @media only screen 
 and (min-width : 439px)
 and (max-width : 639px) {
+  // #welcome, #number {
+  //   margin: 0 auto;
+  //   float: none;
+  //   padding-top: 15px;
+  // }
   header {
+    // text-align: center;
     margin-right: $header1;
     margin-left: $header1;
   }
