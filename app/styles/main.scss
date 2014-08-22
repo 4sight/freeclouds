@@ -177,6 +177,7 @@ and (max-width : 955px) {
   header {
     margin-right: $header2;
     margin-left: $header2;
+  }
 }
 
 @media only screen
@@ -194,4 +195,4 @@ and (min-width : 1255px) {
     margin-right: $header4;
     margin-left: $header4;
   }
-}}
+}
