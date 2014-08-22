@@ -17,7 +17,7 @@ var Stream = Backbone.View.extend({
           var container = $('span.user');
           if (response) {
             var spacesRemoved = response.username.replace(/\s+/g, '-');
-            container.append('<a href="https://soundcloud.com/' + spacesRemoved + '">' + response.username + '</a>');
+            container.append('<a href="https://soundcloud.com/">' + response.username + '</a>');
           } else {
             container.text('An error occurred.');
           }
@@ -28,6 +28,8 @@ var Stream = Backbone.View.extend({
 
   render: function(){
     $('div#home').hide();
+    $('div#homeHalo').hide();
+    $('.home').removeClass();
     SC.initialize({ client_id: setting.clientId });
     console.log(setting.clientId);
     $.ajax({
@@ -52,7 +54,7 @@ var Stream = Backbone.View.extend({
       console.log(track);
       var examined = 0;
       var shown = 0;
-      while (shown < 40) {
+      while (shown < 20) {
         if (track.collection[examined].origin.downloadable == true) {
           SC.oEmbed(track.collection[examined].origin.uri, {}, function (oembed) {
             $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');

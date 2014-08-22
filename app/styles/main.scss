@@ -7,8 +7,11 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   margin: 20px;
-  background-image: url('../images/background.jpg');
   background-size: 100%;
+}
+
+.home {
+  background-image: url('../images/background.jpg');
 }
 
 h1 {
@@ -63,7 +66,6 @@ a.connect {
   border-bottom-right-radius: 14px;
   margin-top: 10%;
   box-shadow: 0 0 3px 10px #FF6F00;
-  
 }
 
 #homeHalo {
@@ -72,74 +74,8 @@ a.connect {
 
 #homeLogo {
   text-align: center;
-  padding-top: 20px;
-}
-
-$headerTiny: 2%;
-$header0: 5%;
-$header1: 25.5%;
-$header2: 17%;
-$header3: 12.5%;
-$header4: 8%;
-
-@media only screen 
-and (max-width : 319px) {
-  header {
-    margin-right: $headerTiny;
-    margin-left: $headerTiny;
-  }
-}
-
-@media only screen 
-and (min-width : 319px)
-and (max-width : 439px) {
-  header {
-    margin-right: $header0;
-    margin-left: $header0;
-  }
-}
-
-@media only screen 
-and (max-width : 539px) {
-  #home, #homeHalo {
-  height: 400px;
-  width: 300px;
-  }
-}
-
-@media only screen 
-and (min-width : 439px)
-and (max-width : 655px) {
-  header {
-    margin-right: $header1;
-    margin-left: $header1;
-  }
-}
-
-@media only screen
-and (min-width : 655px)
-and (max-width : 955px) {
-  header {
-    margin-right: $header2;
-    margin-left: $header2;
-  }
-}
-
-@media only screen
-and (min-width : 955px)
-and (max-width : 1255px) {
-  header {
-    margin-right: $header3;
-    margin-left: $header3;
-  }
-}
-
-@media only screen
-and (min-width : 1255px) {
-  header {
-    margin-right: $header4;
-    margin-left: $header4;
-  }
+  padding-top: 10px;
+  padding-bottom: 12px;
 }
 
 .hidden {
@@ -175,12 +111,15 @@ button {
 .sound {
   display: inline-block;
   clear: both;
+  z-index: 1;
+  position: relative;
 }
 
 #wrapper {
   text-align: center;
   clear: both;
   padding-top: 20px;
+  // background-image: url(../images/cloud.gif);
 }
 
 iframe {
@@ -198,3 +137,61 @@ iframe {
   text-align: center;
   margin-bottom: 20px;
 }
+
+$headerTiny: 2%;
+$header0: 5%;
+$header1: 25.5%;
+$header2: 17%;
+$header3: 12.5%;
+$header4: 8%;
+
+@media only screen 
+and (min-width : 319px)
+and (max-width : 439px) {
+  header {
+    margin-right: $header0;
+    margin-left: $header0;
+  }
+}
+
+@media only screen 
+and (max-width : 539px) {
+  #home, #homeHalo {
+  height: 400px;
+  width: 300px;
+  }
+}
+
+@media only screen 
+and (min-width : 439px)
+and (max-width : 639px) {
+  header {
+    margin-right: $header1;
+    margin-left: $header1;
+  }
+}
+
+@media only screen
+and (min-width : 639px)
+and (max-width : 955px) {
+  header {
+    margin-right: $header2;
+    margin-left: $header2;
+}
+
+@media only screen
+and (min-width : 955px)
+and (max-width : 1255px) {
+  header {
+    margin-right: $header3;
+    margin-left: $header3;
+  }
+}
+
+@media only screen
+and (min-width : 1255px) {
+  header {
+    margin-right: $header4;
+    margin-left: $header4;
+  }
+}}
