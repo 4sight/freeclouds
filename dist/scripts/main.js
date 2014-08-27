@@ -66,6 +66,7 @@ var Stream = Backbone.View.extend({
   render: function(){
     $('div#home').hide();
     $('div#homeHalo').hide();
+    $('span#number').hide();
     $('.home').removeClass();
     SC.initialize({ client_id: setting.clientId });
     console.log(setting.clientId);
