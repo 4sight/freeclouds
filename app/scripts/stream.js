@@ -33,6 +33,8 @@ var Stream = Backbone.View.extend({
     SC.initialize({ client_id: setting.clientId });
     console.log(setting.clientId);
     $.ajax({
+      // dataType: 'json',
+      // crossDomain: true,
       url: resourceHost + '/me',
       data: {
         client_id: setting.clientId
