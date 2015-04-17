@@ -32,12 +32,29 @@ var Stream = Backbone.View.extend({
     $('.home').removeClass();
     SC.initialize({ client_id: setting.clientId });
     console.log(setting.clientId);
+    // var xhr = new XMLHttpRequest();
+    // var url = 'http://localhost:9292/api.soundcloud.com/me/activities?oauth_token=' + token;
+    // function callTracks(){
+    //   if(xhr){
+    //     xhr.open('GET', url, true);
+    //     xhr.withCredentials = true;
+    //     xhr.onreadystatechange = handler;
+    //     invocation.send();
+    //   }
+    // }
     $.ajax({
       url: resourceHost + '/me',
       data: {
-        client_id: setting.clientId
+        client_id: setting.clientId,
       },
+      // type: 'GET',
+      // crossDomain: true,
+      // dataType: 'jsonp',
       beforeSend: function (xhr) {
+        // xhr.setRequestHeader('Access-Control-Allow-Origin: *');
+        // xhr.setRequestHeader('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+        // xhr.setRequestHeader('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
+        // xhr.setRequestHeader('Access-Control-Allow-Credentials: true');
         xhr.setRequestHeader('Authorization', "OAuth " + token);
         xhr.setRequestHeader('Accept',        "application/json");
       },
@@ -46,7 +63,7 @@ var Stream = Backbone.View.extend({
           return response.username;
       }
     });
-    SC.get('/me/activities?oauth_token=' + token, {limit: 1000}, function(tracks){
+    SC.get('http://localhost:9292/api.soundcloud.com/me/activities?oauth_token=' + token, {limit: 1000}, function(tracks){
       var track = tracks;
       console.log(track);
       var examined = 0;
