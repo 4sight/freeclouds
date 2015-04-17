@@ -1,3 +1,40 @@
+var Connect = Backbone.View.extend({
+  el: 'body',
+
+  initialize: function (){
+    this.render();
+    },
+
+  render: function(){
+    $('#wrapper').hide();
+    $('span#welcome').hide();
+    $('span#number').hide();
+    $('div.authenticate').mouseenter(function(){
+      $('div.authenticate').addClass('connectHover');
+    });
+    $('div.authenticate').mouseleave(function(){
+      $('div.authenticate').removeClass('connectHover');
+      }
+    );
+  }
+});
+var Router = Backbone.Router.extend({
+	routes: {
+		'' : 'connect',
+		'stream' : 'stream'
+	},
+
+	connect: function(){
+		new Connect();
+	},
+
+	stream: function(){
+		new Stream();
+	}
+});
+
+new Router();
+Backbone.history.start();
 var Stream = Backbone.View.extend({
   el: 'body',
 
@@ -32,31 +69,12 @@ var Stream = Backbone.View.extend({
     $('.home').removeClass();
     SC.initialize({ client_id: setting.clientId });
     console.log(setting.clientId);
-    // var xhr = new XMLHttpRequest();
-    // var url = 'http://localhost:9292/api.soundcloud.com/me/activities?oauth_token=' + token;
-    // function callTracks(){
-    //   if(xhr){
-    //     xhr.open('GET', url, true);
-    //     xhr.withCredentials = true;
-    //     xhr.onreadystatechange = handler;
-    //     invocation.send();
-    //   }
-    // }
     $.ajax({
-      // dataType: 'json',
-      // crossDomain: true,
       url: resourceHost + '/me',
       data: {
-        client_id: setting.clientId,
+        client_id: setting.clientId
       },
-      // type: 'GET',
-      // crossDomain: true,
-      // dataType: 'jsonp',
       beforeSend: function (xhr) {
-        // xhr.setRequestHeader('Access-Control-Allow-Origin: *');
-        // xhr.setRequestHeader('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-        // xhr.setRequestHeader('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
-        // xhr.setRequestHeader('Access-Control-Allow-Credentials: true');
         xhr.setRequestHeader('Authorization', "OAuth " + token);
         xhr.setRequestHeader('Accept',        "application/json");
       },
@@ -65,7 +83,7 @@ var Stream = Backbone.View.extend({
           return response.username;
       }
     });
-    SC.get('http://localhost:9292/api.soundcloud.com/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
+    SC.get('/me/activities?oauth_token=' + token, {limit: 1000}, function(tracks){
       var track = tracks;
       console.log(track);
       var examined = 0;
@@ -84,3 +102,36 @@ var Stream = Backbone.View.extend({
       });
     }
   });
+// $(function(){
+  var extractToken = function(hash) {
+    var match = hash.match(/access_token=([^&]*)/);
+    return !!match && match[1];
+  };
+ 
+  var setting =
+    {
+      'host':     'soundcloud.com',
+      'clientId': 'a51ea45caadec1ecd0ff45309d4f6485'
+    };
+ 
+  var authHost     = "https://"     + setting.host;
+  var resourceHost = "https://api." + setting.host;
+ 
+  var endUserAuthorizationEndpoint = authHost + "/connect";
+ 
+  var token = extractToken(document.location.hash);
+  if (token) {
+    new Stream();
+  } else if (number > 200 || number < 1) {
+    window.alert('Please enter a number between 1 and 200');
+  } else {
+    $('div.authenticate').show();
+ 
+    var authUrl = endUserAuthorizationEndpoint +
+      "?response_type=token" +
+      "&client_id="    + setting.clientId +
+      "&redirect_uri=" + window.location;
+ 
+    $("a.connect").attr("href", authUrl);
+  }
+// });
