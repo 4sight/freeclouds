@@ -1,3 +1,3 @@
-## Yo, I'm a Readme
+## freeCloud
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+This webapp connects to a user's Soundcloud account and filters their sound stream for audio that is available for freedownload.
