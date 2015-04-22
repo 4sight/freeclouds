@@ -8,7 +8,7 @@ var Stream = Backbone.View.extend({
         url: resourceHost + '/me',
         data: {
           client_id: setting.clientId,
-          redirect_uri: 'localhost:9000'
+          redirect_uri: 'http://freeclouds.herokuapp.com/'
         },
         beforeSend: function (xhr) {
           xhr.setRequestHeader('Authorization', "OAuth " + token);
