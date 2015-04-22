@@ -33,6 +33,7 @@ var Stream = Backbone.View.extend({
     $('.home').removeClass();
     SC.initialize({ client_id: setting.clientId });
     console.log(setting.clientId);
+    console.log(data);
     $.ajax({
       url: resourceHost + '/me',
       data: {
