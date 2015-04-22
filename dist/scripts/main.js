@@ -66,6 +66,7 @@ var Stream = Backbone.View.extend({
   render: function(){
     $('div#home').hide();
     $('div#homeHalo').hide();
+    $('span#number').hide();
     $('.home').removeClass();
     SC.initialize({ client_id: setting.clientId });
     console.log(setting.clientId);
@@ -83,13 +84,15 @@ var Stream = Backbone.View.extend({
           return response.username;
       }
     });
+    $('input#box').keyup(function(){
+      var number = $(this).val();
+    });
     SC.get('/me/activities?oauth_token=' + token, {limit: 1000}, function(tracks){
       var track = tracks;
       console.log(track);
       var examined = 0;
       var shown = 0;
-      var number = document.getElementById('howMany');
-      while (shown < number.value) {
+      while (shown < 20) {
         if (track.collection[examined].origin.downloadable == true) {
           SC.oEmbed(track.collection[examined].origin.uri, {}, function (oembed) {
             $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
@@ -111,7 +114,7 @@ var Stream = Backbone.View.extend({
   var setting =
     {
       'host':     'soundcloud.com',
-      'clientId': 'a51ea45caadec1ecd0ff45309d4f6485'
+      'clientId': '3fec932af4887ac1efe6dfa7da818fd8'
     };
  
   var authHost     = "https://"     + setting.host;
