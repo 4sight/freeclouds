@@ -46,7 +46,7 @@ var Stream = Backbone.View.extend({
           return response.username;
       }
     });
-    SC.get('/me/activities?oauth_token=' + token, {limit: 1000}, function(tracks){
+    SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
       var track = tracks;
       console.log(track);
       var examined = 0;
