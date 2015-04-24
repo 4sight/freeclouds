@@ -7,7 +7,7 @@
   var setting =
     {
       'host':     'soundcloud.com',
-      'clientId': 'a51ea45caadec1ecd0ff45309d4f6485'
+      'clientId': '3fec932af4887ac1efe6dfa7da818fd8'
     };
  
   var authHost     = "https://"     + setting.host;
@@ -19,7 +19,7 @@
   if (token) {
     new Stream();
   } else if (number > 200 || number < 1) {
-    window.alert('Please enter a number between 1 and 200');
+    window.alert('Please enter a number between 1 and 100');
   } else {
     $('div.authenticate').show();
  
