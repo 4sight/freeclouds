@@ -7,7 +7,7 @@
   var setting =
     {
       'host':     'soundcloud.com',
-      'clientId': 'a51ea45caadec1ecd0ff45309d4f6485'
+      'clientId': '3fec932af4887ac1efe6dfa7da818fd8'
     };
  
   var authHost     = "https://"     + setting.host;
@@ -26,7 +26,7 @@
   var authUrl = encodeURI(endUserAuthorizationEndpoint +
       "?response_type=token" +
       "&client_id="    + setting.clientId +
-      "&redirect_uri=" + window.location + "callback.html");
+      "&redirect_uri=" + window.location);
  
     console.log(authUrl);
 
