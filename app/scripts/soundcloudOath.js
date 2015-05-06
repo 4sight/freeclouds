@@ -7,8 +7,7 @@
   var setting =
     {
       'host':     'soundcloud.com',
-      'clientId': '3fec932af4887ac1efe6dfa7da818fd8',
-      'redirect_uri': 'freeclouds.herokuapp.com'
+      'clientId': 'a51ea45caadec1ecd0ff45309d4f6485'
     };
  
   var authHost     = "https://"     + setting.host;
@@ -24,11 +23,13 @@
   } else {
     $('div.authenticate').show();
  
-    var authUrl = endUserAuthorizationEndpoint +
+  var authUrl = encodeURI(endUserAuthorizationEndpoint +
       "?response_type=token" +
       "&client_id="    + setting.clientId +
-      "&redirect_uri=" + window.location;
+      "&redirect_uri=" + window.location + "callback.html");
  
+    console.log(authUrl);
+
     $("a.connect").attr("href", authUrl);
   }
 // });
