@@ -1,12 +1,39 @@
 {
-  "private": true,
-  "engines": {
-    "node": ">=0.10.0"
+  "name": "ee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.html",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "connect": "^3.6.3",
+    "connect-livereload": "^0.6.0",
+    "gulp-batch": "^1.0.5",
+    "gulp-load-plugins": "^1.5.0",
+    "opn": "^5.1.0"
   },
   "scripts": {
     "start": "node.js"
     },
   "devDependencies": {
+<<<<<<< HEAD
+    "gulp": "^3.9.1",
+    "gulp-watch": "^4.3.11",
+    "serve-static": "^1.12.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4sight/ee.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4sight/ee/issues"
+  },
+  "homepage": "https://github.com/4sight/ee#readme"
+=======
     "connect": "^2.30.2",
     "connect-livereload": "^0.4.1",
     "gulp": "^3.6.0",
@@ -38,4 +65,5 @@
     "gzippo": "^0.2.0",
     "heroku": "^0.2.0"
   }
+>>>>>>> rollback
 }
