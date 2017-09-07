@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html class="no-js">
   <head>
@@ -7,11 +8,19 @@
     <title>freeclouds</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="styles/vendor.css">
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
 
+    <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
 
-    <script src="scripts/vendor/modernizr.js"></script>
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
     
   </head>
   <body class='home'>
@@ -42,11 +51,25 @@
     </div></div>
     <div id='wrapper'><img src='../images/cloud.gif' style='z-index: 0; position: absolute; left: 28%; height: 60%;'></div>
 
-    <script src="scripts/vendor.js"></script>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/handlebars/handlebars.js"></script>
+    <script src="../bower_components/backbone/backbone.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
     <script src="//connect.soundcloud.com/sdk.js"></script>
 
-    <script src="scripts/main.js"></script>
+    <!-- build:js scripts/main.js -->
+    <script src='scripts/connect.js'></script>
+    <script src='scripts/router.js'></script>
+    <script src='scripts/stream.js'></script>
+    <script src='scripts/soundcloudOath.js'></script>
+    <!-- endbuild -->
 
 </body>
 </html>
+=======
+>>>>>>> master
