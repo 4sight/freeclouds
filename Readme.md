@@ -1,3 +1,3 @@
 ## Yo, I'm a Readme
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+Find music that your favorite artists have made available for free download on the web's most popular streaming music site.
