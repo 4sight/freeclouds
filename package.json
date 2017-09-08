@@ -5,7 +5,6 @@
   },
   "scripts": {
     "start": "node connect.js",
-    "postinstall": "./node_modules/bower/bin/bower install && npm run build"
   },
   "devDependencies": {
     "connect": "^2.30.2",
