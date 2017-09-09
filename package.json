@@ -1,4 +1,5 @@
 {
+  "start": "node server.js",
   "private": true,
   "engines": {
     "node": ">=0.10.0"
