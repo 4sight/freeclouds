@@ -34,14 +34,17 @@
     "wiredep": "^1.4.3"
   },
   "dependencies": {
-    "bower": "^1.8.0",
+    "bourbon": "^4.3.4",
+    "bower": "^1.8.2",
     "express": "^4.8.5",
+    "gulp-sass": "^3.1.0",
     "gulp-watch": "^4.3.11",
     "gzippo": "^0.2.0",
     "heroku": "^0.2.0",
     "imagemin-gifsicle": "^5.2.0",
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-optipng": "^5.2.1",
-    "imagemin-pngquant": "^5.0.1"
+    "imagemin-pngquant": "^5.0.1",
+    "node-bourbon": "^4.2.8"
   }
 }
