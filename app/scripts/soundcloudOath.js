@@ -7,7 +7,7 @@
   var setting =
     {
       'host':     'soundcloud.com',
-      'clientId': '8a1b91f39d7f72d9f1ba24540cc5cc4d'
+      'clientId': 'a51ea45caadec1ecd0ff45309d4f6485'
     };
  
   var authHost     = "https://"     + setting.host;
