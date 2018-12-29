@@ -65,23 +65,23 @@ var Stream = Backbone.View.extend({
           return response.username;
       }
     });
-    SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
+    SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks) {
       var track = tracks;
       console.log(track);
       var examined = 0;
       var shown = 0;
       var number = document.getElementById('howMany');
-      while (shown < number.value){
-      console.log(track.collection[examined].origin.downloadable);
-        if (track.collection[examined].origin.downloadable == true){
+      while (shown < number.value && examined < track.collection.length){
+        // console.log(track.collection[examined].origin.downloadable);
+        if (track.collection[examined].origin && track.collection[examined].origin.downloadable == true){
           SC.oEmbed(track.collection[examined].origin.uri, {}, function (oembed) {
             $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
           });
           shown++;
-          } else {}
-        track.collection[examined]++;
         }
-        console.log(examined + ' tracks scanned');
-      });
-    }
-  });
+        examined++;
+      }
+      console.log(examined + ' tracks scanned');
+    });
+  }
+});
