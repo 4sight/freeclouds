@@ -32,31 +32,12 @@ var Stream = Backbone.View.extend({
     $('.home').removeClass();
     SC.initialize({ client_id: setting.clientId });
     console.log(setting.clientId);
-    // var xhr = new XMLHttpRequest();
-    // var url = 'http://localhost:9292/api.soundcloud.com/me/activities?oauth_token=' + token;
-    // function callTracks(){
-    //   if(xhr){
-    //     xhr.open('GET', url, true);
-    //     xhr.withCredentials = true;
-    //     xhr.onreadystatechange = handler;
-    //     invocation.send();
-    //   }
-    // }
     $.ajax({
-      // dataType: 'json',
-      // crossDomain: true,
       url: resourceHost + '/me',
       data: {
         client_id: setting.clientId,
       },
-      // type: 'GET',
-      // crossDomain: true,
-      // dataType: 'jsonp',
       beforeSend: function (xhr) {
-        // xhr.setRequestHeader('Access-Control-Allow-Origin: *');
-        // xhr.setRequestHeader('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-        // xhr.setRequestHeader('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
-        // xhr.setRequestHeader('Access-Control-Allow-Credentials: true');
         xhr.setRequestHeader('Authorization', "OAuth " + token);
         xhr.setRequestHeader('Accept',        "application/json");
       },
@@ -66,15 +47,13 @@ var Stream = Backbone.View.extend({
       }
     });
     SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks) {
-      var track = tracks;
-      console.log(track);
+      console.log(tracks);
       var examined = 0;
       var shown = 0;
       var number = document.getElementById('howMany');
-      while (shown < number.value && examined < track.collection.length){
-        // console.log(track.collection[examined].origin.downloadable);
-        if (track.collection[examined].origin && track.collection[examined].origin.downloadable == true){
-          SC.oEmbed(track.collection[examined].origin.uri, {}, function (oembed) {
+      while (shown < number.value && examined < tracks.collection.length){
+        if (tracks.collection[examined].origin && tracks.collection[examined].origin.downloadable == true){
+          SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
             $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
           });
           shown++;
