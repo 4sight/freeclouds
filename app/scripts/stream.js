@@ -71,14 +71,15 @@ var Stream = Backbone.View.extend({
       var examined = 0;
       var shown = 0;
       var number = document.getElementById('howMany');
-      while (shown < number.value) {
-        if (track.collection[examined].origin.downloadable == true) {
+      while (shown < number.value){
+      console.log(track.collection[examined].origin.downloadable);
+        if (track.collection[examined].origin.downloadable == true){
           SC.oEmbed(track.collection[examined].origin.uri, {}, function (oembed) {
             $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
           });
           shown++;
           } else {}
-        examined++;
+        track.collection[examined]++;
         }
         console.log(examined + ' tracks scanned');
       });
