@@ -50,7 +50,7 @@ var Stream = Backbone.View.extend({
       console.log(tracks);
       var examined = 0;
       var shown = 0;
-      var number = document.getElementById('howMany');
+      var number = document.getElementById('number');
       while (shown < number.value && examined < tracks.collection.length){
         if (tracks.collection[examined].origin){
           SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
@@ -64,8 +64,24 @@ var Stream = Backbone.View.extend({
     });
     document.getElementById('search').addEventListener('click', search, false);
     function search(){
-        var genreSearch = new RegExp('/\w' + genre + '\w/i');
         $('#wrapper').empty();
-      };
-    }
- });
+        SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks) {
+          console.log(tracks);
+          var examined = 0;
+          var shown = 0;
+          var number = document.getElementById('number');
+          var genreSearch = new RegExp('/\w' + genre + '\w/i');
+          while (shown < number.value && examined < tracks.collection.length){
+            if (tracks.collection[examined].origin && tracks.collection[examined].origin.genre == 'House'){
+          SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
+            $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
+          });
+          shown++;
+          }
+          examined++;
+        }
+        console.log(examined + ' tracks scanned');
+      });
+    };
+  }
+});
