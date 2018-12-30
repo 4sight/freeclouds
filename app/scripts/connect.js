@@ -8,7 +8,7 @@ var Connect = Backbone.View.extend({
   render: function(){
     $('#wrapper').hide();
     $('span#welcome').hide();
-    $('span#number').hide();
+    $('span#forms').hide();
     $('div.authenticate').mouseenter(function(){
       $('div.authenticate').addClass('connectHover');
     });

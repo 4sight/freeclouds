@@ -52,7 +52,7 @@ var Stream = Backbone.View.extend({
       var shown = 0;
       var number = document.getElementById('howMany');
       while (shown < number.value && examined < tracks.collection.length){
-        if (tracks.collection[examined].origin && tracks.collection[examined].origin.downloadable == true){
+        if (tracks.collection[examined].origin){
           SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
             $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
           });
@@ -62,5 +62,10 @@ var Stream = Backbone.View.extend({
       }
       console.log(examined + ' tracks scanned');
     });
-  }
-});
+    document.getElementById('search').addEventListener('click', search, false);
+    function search(){
+        var genreSearch = new RegExp('/\w' + genre + '\w/i');
+        $('#wrapper').empty();
+      };
+    }
+ });

@@ -81,12 +81,15 @@ button {
 .authenticated {
   display: inline; }
 
-#number {
+#forms {
   float: right;
   clear: both;
   display: inline-block;
   position: relative;
   top: -4px; }
+
+form {
+  display: inline; }
 
 #token {
   display: none; }
