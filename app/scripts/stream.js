@@ -81,10 +81,10 @@ var Stream = Backbone.View.extend({
               if (tracks.collection[examined].origin && genreArray[examined] != -1){
                 SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
                   $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
+                shown++;
                 });
               };
             });
-          shown++;
         }
         examined++;
       }
