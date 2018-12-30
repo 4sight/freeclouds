@@ -63,30 +63,34 @@ var Stream = Backbone.View.extend({
       console.log(examined + ' tracks scanned');
     });
     function search(){
-        $('#wrapper').empty();
-        var genre = document.getElementById('genreInput').value;
-        SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks) {
-          console.log(tracks);
-          var examined = 0;
-          var shown = 0;
-          var number = document.getElementById('number');
-          while (shown < number.value && examined < tracks.collection.length){            
-            if (tracks.collection[examined].origin){
-              var genres = [];
-              genres[examined] = tracks.collection[examined].origin.genre;
-              var searchArray = [];
-              searchArray[examined] = tracks.collection[examined].origin.genre.search(/\w' + genre + '\w/i);
-              console.log(searchArray[examined]);
-              // SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
-              //   $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
-              // });
-            shown++;
-          }
-          examined++;
+      SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
+        console.log(tracks);
+        var examined = 0;
+        var shown = 0;
+        var number = document.getElementById('number');
+        while (shown < number.value && examined < tracks.collection.length){            
+          if (tracks.collection[examined].origin){
+            var genres = [];
+            genres[examined] = tracks.collection[examined].origin.genre;
+            var genreArray = [];
+            var genre = document.getElementById('genreInput').value;
+            var regex = new RegExp(genre, 'ig');
+            genreArray[examined] = genres[examined].search(regex);
+            console.log(genreArray);
+            genreArray.forEach(function(){
+              if (tracks.collection[examined].origin && genreArray[examined] != -1){
+                SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
+                  $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
+                });
+              };
+            });
+          shown++;
         }
-        console.log(examined + ' tracks scanned');
-      });
-    console.log(genre);
+        examined++;
+      }
+      console.log(examined + ' tracks scanned');
+    });
+    $('#wrapper').empty();
     };
     document.getElementById('searchButton').addEventListener('click', search);
   }
