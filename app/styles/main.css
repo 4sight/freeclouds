@@ -24,9 +24,18 @@ h2 {
   text-align: center;
   font-size: 18px;
   margin: 25px;
-  font-weight: normal; }
+  font-weight: normal;
+  position: relative;
+  top: -20px; }
+
+#logo {
+  opacity: 0.9;
+  height: 100px;
+  width: 260px; }
 
 .authenticate {
+  position: relative;
+  top: -20px;
   color: #111111;
   background: linear-gradient(359deg, #CCCCCC, #DDDDDD);
   margin: 0 auto;
