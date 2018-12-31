@@ -110,6 +110,7 @@ var Stream = Backbone.View.extend({
       if (genreArray.length > 0){}
       // If search results are displayed, a blank search resets the window
       else {
+        $('#wrapper').empty();
         SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
           console.log(tracks);
           var number = document.getElementById('number');
