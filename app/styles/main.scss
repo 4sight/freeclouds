@@ -209,18 +209,26 @@ and (max-width : 539px) {
 @media only screen 
 and (min-width : 439px)
 and (max-width : 639px) {
-  // #welcome, #number {
-  //   margin: 0 auto;
-  //   float: none;
-  //   padding-top: 15px;
-  // }
   header {
-    // text-align: center;
     margin-right: $header1;
     margin-left: $header1;
   }
+.authenticated {
+    position: static;
+  }
   #genre {
-    top: 20px;
+    position: static;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  #limit {
+    position: relative;
+    top: 0px;
+    float: none;
+  }
+  #wrapper {
+    position: relative;
+    top: -20px;
   }
 }
 
@@ -244,6 +252,10 @@ and (max-width : 955px) {
     position: relative;
     top: 0px;
     float: none;
+  }
+  #wrapper {
+    position: relative;
+    top: -20px;
   }
 }
 

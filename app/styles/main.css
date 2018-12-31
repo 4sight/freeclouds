@@ -160,8 +160,19 @@ iframe {
   header {
     margin-right: 25.5%;
     margin-left: 25.5%; }
+  .authenticated {
+    position: static; }
   #genre {
-    top: 20px; } }
+    position: static;
+    margin-top: 15px;
+    margin-bottom: 15px; }
+  #limit {
+    position: relative;
+    top: 0px;
+    float: none; }
+  #wrapper {
+    position: relative;
+    top: -20px; } }
 
 @media only screen and (min-width: 639px) and (max-width: 955px) {
   header {
@@ -177,7 +188,10 @@ iframe {
   #limit {
     position: relative;
     top: 0px;
-    float: none; } }
+    float: none; }
+  #wrapper {
+    position: relative;
+    top: -20px; } }
 
 @media only screen and (min-width: 955px) and (max-width: 1255px) {
   header {
