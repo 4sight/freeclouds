@@ -166,7 +166,18 @@ iframe {
 @media only screen and (min-width: 639px) and (max-width: 955px) {
   header {
     margin-right: 17%;
-    margin-left: 17%; } }
+    margin-left: 17%;
+    text-align: center; }
+  .authenticated {
+    position: static; }
+  #genre {
+    position: static;
+    margin-top: 15px;
+    margin-bottom: 15px; }
+  #limit {
+    position: relative;
+    top: 0px;
+    float: none; } }
 
 @media only screen and (min-width: 955px) and (max-width: 1255px) {
   header {
