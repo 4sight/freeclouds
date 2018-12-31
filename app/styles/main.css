@@ -90,6 +90,9 @@ button {
 .authenticated {
   display: inline; }
 
+#test {
+  text-align: center; }
+
 #forms {
   float: right;
   clear: both;
@@ -98,11 +101,15 @@ button {
   top: -4px; }
 
 #genre {
+  text-align: center;
   position: relative;
-  left: -20px; }
+  top: -20px;
+  right: 60px; }
 
-form {
-  display: inline; }
+#limit {
+  float: right;
+  position: relative;
+  top: -45px; }
 
 #numberButton {
   position: relative;
