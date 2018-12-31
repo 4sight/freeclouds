@@ -50,10 +50,12 @@ var Stream = Backbone.View.extend({
       console.log(tracks);
       var number = document.getElementById('number');
       var genres = [];
-      var i;
       var regexArray = [];
+      var i;
       for (i = 0; i <= tracks.collection.length; i++){
-        if (tracks.collection[i].origin){
+        if (tracks.collection[i] == null){
+          genres[i] = -1;
+        } else {
           genres[i] = tracks.collection[i].origin.genre;
           console.log(genres);
           // tracks.collection[i].origin.genre.search(regex);
