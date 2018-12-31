@@ -79,22 +79,27 @@ var Stream = Backbone.View.extend({
         var shown = 0;
         var genreArray = [];
         var number = document.getElementById('number');
-        while (shown < number.value && examined < tracks.collection.length){            
+        console.log(tracks);
+        while (shown < number.value && examined < tracks.collection.length){        
           if (tracks.collection[examined].origin){
             var genre = document.getElementById('genreInput').value;
             var regex = new RegExp(genre, 'ig');
-            genreArray[examined] = genres[examined].search(regex);
-            if (genreArray[examined] != null && genreArray[examined] != -1){
-              SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
-                $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
-              });
-            } else {
-              genres[examined] = -1;
-            };
-          shown++;
+            if (genres[examined] != null){
+              genreArray[examined] = genres[examined].search(regex);
+              if (genreArray[examined] != -1){
+                SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
+                  $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
+                });
+                shown++;
+                } else {
+                  genres[examined] = -1;
+                };
+            }
+          examined++;
+          } else {
+          genreArray[examined] = -1;
+          }
         }
-        examined++;
-      }
       console.log(examined + ' tracks scanned');
     });
     $('#wrapper').empty();
