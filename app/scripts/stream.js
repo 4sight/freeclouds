@@ -46,11 +46,29 @@ var Stream = Backbone.View.extend({
           return response.username;
       }
     });
-    SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks) {
+    SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
+      console.log(tracks);
+      var number = document.getElementById('number');
+      var genres = [];
+      var i;
+      var regexArray = [];
+      for (i = 0; i <= tracks.collection.length; i++){
+        if (tracks.collection[i].origin){
+          genres[i] = tracks.collection[i].origin.genre;
+          console.log(genres);
+          // tracks.collection[i].origin.genre.search(regex);
+          // var nullSearch;
+          // var nullregex = new RegExp('\x00');
+          // if (tracks.collection[i].origin.genre == null){
+          //   console.log('nlllllll');
+            // };
+          // if (nullSearch != -1){
+          // }
+        };
+      };
       console.log(tracks);
       var examined = 0;
       var shown = 0;
-      var number = document.getElementById('number');
       while (shown < number.value && examined < tracks.collection.length){
         if (tracks.collection[examined].origin){
           SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
@@ -64,10 +82,9 @@ var Stream = Backbone.View.extend({
     });
     function search(){
       $('#wrapper').empty();
+      var regex = new RegExp(genre, 'ig');
       var genre = document.getElementById('genreInput').value;
       var i;
-      var regexArray = [];
-      var regex = new RegExp(genre, 'ig');
       while (i < number.value){
         for (i = 0; i <= tracks.collection.length; i++){
           regexArray[i] = tracks.collection[i].origin.genre.search(regex)
