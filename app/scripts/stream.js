@@ -46,29 +46,19 @@ var Stream = Backbone.View.extend({
           return response.username;
       }
     });
+    var genres = [];
     SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
       console.log(tracks);
       var number = document.getElementById('number');
-      var genres = [];
-      var regexArray = [];
       var i;
       for (i = 0; i <= tracks.collection.length; i++){
         if (tracks.collection[i] == null){
           genres[i] = -1;
         } else {
           genres[i] = tracks.collection[i].origin.genre;
-          console.log(genres);
-          // tracks.collection[i].origin.genre.search(regex);
-          // var nullSearch;
-          // var nullregex = new RegExp('\x00');
-          // if (tracks.collection[i].origin.genre == null){
-          //   console.log('nlllllll');
-            // };
-          // if (nullSearch != -1){
-          // }
+          // console.log(genres);
         };
       };
-      console.log(tracks);
       var examined = 0;
       var shown = 0;
       while (shown < number.value && examined < tracks.collection.length){
@@ -81,16 +71,28 @@ var Stream = Backbone.View.extend({
         examined++;
       }
       console.log(examined + ' tracks scanned');
+      return genres;
     });
+    console.log(genres);
     function search(){
       $('#wrapper').empty();
+      var searchArray = [];
       var regex = new RegExp(genre, 'ig');
       var genre = document.getElementById('genreInput').value;
       var i;
       while (i < number.value){
+        console.log('while');
         for (i = 0; i <= tracks.collection.length; i++){
-          regexArray[i] = tracks.collection[i].origin.genre.search(regex)
-          if (regexArray[i] != -1 || null || undefined){
+          searchArray[i] = tracks.collection[i].origin.genre.search(regex);
+          if (searchArray[i] != -1 || null || undefined){
+          // tracks.collection[i].origin.genre.search(regex);
+          // var nullSearch;
+          // var nullregex = new RegExp('\x00');
+          // if (tracks.collection[i].origin.genre == null){
+          //   console.log('nlllllll');
+            // };
+          // if (nullSearch != -1){
+          // }
             SC.oEmbed(tracks.collection[i].origin.uri, {}, function(oembed){
               $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
             });
