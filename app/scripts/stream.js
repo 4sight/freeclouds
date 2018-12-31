@@ -47,7 +47,6 @@ var Stream = Backbone.View.extend({
       }
     });
     var genres = [];
-    var tracks = [];
     SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
       console.log(tracks);
       var number = document.getElementById('number');
@@ -72,7 +71,6 @@ var Stream = Backbone.View.extend({
         examined++;
       }
       console.log(examined + ' tracks scanned');
-      return genres;
     });
     console.log(genres);
     function search(){
