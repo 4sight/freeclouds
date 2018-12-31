@@ -74,31 +74,39 @@ var Stream = Backbone.View.extend({
     });
     console.log(genres);
     function search(){
-      $('#wrapper').empty();
       var searchArray = [];
       var regex = new RegExp(genre, 'ig');
       var genre = document.getElementById('genreInput').value;
-      var shown = 0;
-      var examined = 0;
-      var i;
-      if (shown < number.value && searchArray[i] != -1 || null || undefined){
-        for (i = 0; i <= tracks.collection.length; i++){
-          searchArray[i] = tracks.collection[i].origin.genre.search(regex);
-          // tracks.collection[i].origin.genre.search(regex);
-          // var nullSearch;
-          // var nullregex = new RegExp('\x00');
-          // if (tracks.collection[i].origin.genre == null){
-          //   console.log('nlllllll');
-            // };
-          // if (nullSearch != -1){
-          // }
-          SC.oEmbed(tracks.collection[i].origin.uri, {}, function(oembed){
-            $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
-          });
-          shown++;
+      SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
+        var number = document.getElementById('number');
+        var examined = 0;
+        var shown = 0;
+        while (shown < number.value){
+          if (searchArray[i] != -1 || null || undefined){
+            var i;
+            for (i = 0; i <= tracks.collection.length; i++){
+              if (tracks.collection[i] != null || undefined){
+              searchArray[i] = tracks.collection[i].origin.genre.search(regex)};
+              // tracks.collection[i].origin.genre.search(regex);
+              // var nullSearch;
+              // var nullregex = new RegExp('\x00');
+              // if (tracks.collection[i].origin.genre == null){
+              //   console.log('nlllllll');
+                // };
+              // if (nullSearch != -1){
+              // }
+              SC.oEmbed(tracks.collection[i].origin.uri, {}, function(oembed){
+                $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
+              });
+              shown++;
+            };
+            examined++;
+          } else {
+            searchArray[i] = -1;
+          };
         };
-        examined++;
-      };
+      });
+      $('#wrapper').empty();
     };
     document.getElementById('searchButton').addEventListener('click', search);
   }
