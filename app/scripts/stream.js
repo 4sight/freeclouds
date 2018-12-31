@@ -74,36 +74,38 @@ var Stream = Backbone.View.extend({
     });
     console.log(genres);
     function search(){
-      SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
-        var examined = 0;
-        var shown = 0;
-        var genreArray = [];
-        var number = document.getElementById('number');
-        console.log(tracks);
-        while (shown < number.value && examined < tracks.collection.length){        
-          if (tracks.collection[examined].origin){
-            var genre = document.getElementById('genreInput').value;
-            var regex = new RegExp(genre, 'ig');
-            if (genres[examined] != null){
-              genreArray[examined] = genres[examined].search(regex);
-              if (genreArray[examined] != -1){
-                SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
-                  $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
-                });
-                shown++;
-                } else {
-                  genres[examined] = -1;
-                };
-                console.log(shown);
+      if (document.getElementById('genreInput').value != ''){
+        SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
+          var examined = 0;
+          var shown = 0;
+          var genreArray = [];
+          var number = document.getElementById('number');
+          console.log(tracks);
+          while (shown < number.value && examined < tracks.collection.length){        
+            if (tracks.collection[examined].origin){
+              var genre = document.getElementById('genreInput').value;
+              var regex = new RegExp(genre, 'ig');
+              if (genres[examined] != null){
+                genreArray[examined] = genres[examined].search(regex);
+                if (genreArray[examined] != -1){
+                  SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
+                    $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
+                  });
+                  shown++;
+                  } else {
+                    genres[examined] = -1;
+                  };
+                  console.log(shown);
+              }
+            examined++;
+            } else {
+            genreArray[examined] = -1;
             }
-          examined++;
-          } else {
-          genreArray[examined] = -1;
           }
-        }
-      console.log(examined + ' tracks scanned');
-    });
-    $('#wrapper').empty();
+        $('#wrapper').empty();
+        console.log(examined + ' tracks scanned');
+      });
+    } else {};
     };
     document.getElementById('searchButton').addEventListener('click', search);
   }
