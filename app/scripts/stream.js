@@ -77,16 +77,14 @@ var Stream = Backbone.View.extend({
       SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
         var examined = 0;
         var shown = 0;
+        var genreArray = [];
         var number = document.getElementById('number');
         while (shown < number.value && examined < tracks.collection.length){            
           if (tracks.collection[examined].origin){
-            var genres = [];
-            genres[examined] = tracks.collection[examined].origin.genre;
-            var genreArray = [];
             var genre = document.getElementById('genreInput').value;
             var regex = new RegExp(genre, 'ig');
-            if (genreArray[examined] != null && -1){
-              genres[examined].search(regex);
+            genreArray[examined] = genres[examined].search(regex);
+            if (genreArray[examined] != null && genreArray[examined] != -1){
               SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
                 $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
               });
