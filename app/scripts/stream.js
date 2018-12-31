@@ -75,7 +75,6 @@ var Stream = Backbone.View.extend({
     console.log(genres);
     function search(){
       SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
-        console.log(tracks);
         var examined = 0;
         var shown = 0;
         var number = document.getElementById('number');
@@ -86,15 +85,14 @@ var Stream = Backbone.View.extend({
             var genreArray = [];
             var genre = document.getElementById('genreInput').value;
             var regex = new RegExp(genre, 'ig');
-            genreArray[examined] = genres[examined].search(regex);
-            console.log(genreArray);
-            genreArray.forEach(function(){
-              if (tracks.collection[examined].origin && genreArray[examined] != -1){
-                SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
-                  $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
-                });
-              };
-            });
+            if (genreArray[examined] != null && -1){
+              genres[examined].search(regex);
+              SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
+                $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
+              });
+            } else {
+              genres[examined] = -1;
+            };
           shown++;
         }
         examined++;
@@ -106,7 +104,3 @@ var Stream = Backbone.View.extend({
     document.getElementById('searchButton').addEventListener('click', search);
   }
 });
-// if (searchArray[i] != -1 || null || undefined){
-// var i;
-// for (i = 0; i <= tracks.collection.length; i++){
-// if (tracks.collection[i] != null || undefined){
