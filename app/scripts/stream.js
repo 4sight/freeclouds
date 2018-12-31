@@ -47,6 +47,7 @@ var Stream = Backbone.View.extend({
       }
     });
     var genres = [];
+    var tracks = [];
     SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
       console.log(tracks);
       var number = document.getElementById('number');
@@ -79,12 +80,12 @@ var Stream = Backbone.View.extend({
       var searchArray = [];
       var regex = new RegExp(genre, 'ig');
       var genre = document.getElementById('genreInput').value;
+      var shown = 0;
+      var examined = 0;
       var i;
-      while (i < number.value){
-        console.log('while');
+      if (shown < number.value && searchArray[i] != -1 || null || undefined){
         for (i = 0; i <= tracks.collection.length; i++){
           searchArray[i] = tracks.collection[i].origin.genre.search(regex);
-          if (searchArray[i] != -1 || null || undefined){
           // tracks.collection[i].origin.genre.search(regex);
           // var nullSearch;
           // var nullregex = new RegExp('\x00');
@@ -93,11 +94,12 @@ var Stream = Backbone.View.extend({
             // };
           // if (nullSearch != -1){
           // }
-            SC.oEmbed(tracks.collection[i].origin.uri, {}, function(oembed){
-              $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
-            });
-          };
+          SC.oEmbed(tracks.collection[i].origin.uri, {}, function(oembed){
+            $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
+          });
+          shown++;
         };
+        examined++;
       };
     };
     document.getElementById('searchButton').addEventListener('click', search);
