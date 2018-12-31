@@ -74,11 +74,11 @@ var Stream = Backbone.View.extend({
     });
     console.log(genres);
     function search(){
+      var genreArray = [];
       if (document.getElementById('genreInput').value != ''){
         SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
           var examined = 0;
           var shown = 0;
-          var genreArray = [];
           var number = document.getElementById('number');
           console.log(tracks);
           while (shown < number.value && examined < tracks.collection.length){        
@@ -105,7 +105,16 @@ var Stream = Backbone.View.extend({
         $('#wrapper').empty();
         console.log(examined + ' tracks scanned');
       });
-    } else {};
+    } else {
+
+
+
+      // If the default stream is displayed, a blank search does nothing
+      if (genreArray.length > 0){}
+      // If search results are displayed, a blank search resets the window
+      else {
+      };
+      };
     };
     document.getElementById('searchButton').addEventListener('click', search);
   }
