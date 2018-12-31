@@ -87,14 +87,6 @@ var Stream = Backbone.View.extend({
             for (i = 0; i <= tracks.collection.length; i++){
               if (tracks.collection[i] != null || undefined){
               searchArray[i] = tracks.collection[i].origin.genre.search(regex)};
-              // tracks.collection[i].origin.genre.search(regex);
-              // var nullSearch;
-              // var nullregex = new RegExp('\x00');
-              // if (tracks.collection[i].origin.genre == null){
-              //   console.log('nlllllll');
-                // };
-              // if (nullSearch != -1){
-              // }
               SC.oEmbed(tracks.collection[i].origin.uri, {}, function(oembed){
                 $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
               });
