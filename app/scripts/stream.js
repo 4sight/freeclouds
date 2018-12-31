@@ -106,13 +106,35 @@ var Stream = Backbone.View.extend({
         console.log(examined + ' tracks scanned');
       });
     } else {
-
-
-
       // If the default stream is displayed, a blank search does nothing
       if (genreArray.length > 0){}
       // If search results are displayed, a blank search resets the window
       else {
+        SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
+          console.log(tracks);
+          var number = document.getElementById('number');
+          var i;
+          for (i = 0; i <= tracks.collection.length; i++){
+            if (tracks.collection[i] == null){
+              genres[i] = -1;
+            } else {
+              genres[i] = tracks.collection[i].origin.genre;
+              // console.log(genres);
+            };
+          };
+          var examined = 0;
+          var shown = 0;
+          while (shown < number.value && examined < tracks.collection.length){
+            if (tracks.collection[examined].origin){
+              SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
+                $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
+              });
+              shown++;
+            }
+            examined++;
+          }
+          console.log(examined + ' tracks scanned');
+      });
       };
       };
     };
