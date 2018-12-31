@@ -7,6 +7,8 @@ var Connect = Backbone.View.extend({
 
   render: function(){
     $('#wrapper').hide();
+    $('#genre').hide();
+    $('#limit').hide();
     $('span#welcome').hide();
     $('span#forms').hide();
     $('div.authenticate').mouseenter(function(){

@@ -190,6 +190,9 @@ and (max-width : 439px) {
     margin-right: $header0;
     margin-left: $header0;
   }
+  #genre {
+    top: 20px;
+  }
 }
 
 @media only screen 
@@ -197,6 +200,9 @@ and (max-width : 539px) {
   #home, #homeHalo {
   height: 400px;
   width: 300px;
+  }
+  #genre {
+    top: 20px;
   }
 }
 
@@ -212,6 +218,9 @@ and (max-width : 639px) {
     // text-align: center;
     margin-right: $header1;
     margin-left: $header1;
+  }
+  #genre {
+    top: 20px;
   }
 }
 
@@ -230,6 +239,9 @@ and (max-width : 1255px) {
   header {
     margin-right: $header3;
     margin-left: $header3;
+  }
+  #genre {
+    top: 20px;
   }
 }
 

@@ -145,17 +145,23 @@ iframe {
 @media only screen and (min-width: 319px) and (max-width: 439px) {
   header {
     margin-right: 5%;
-    margin-left: 5%; } }
+    margin-left: 5%; }
+  #genre {
+    top: 20px; } }
 
 @media only screen and (max-width: 539px) {
   #home, #homeHalo {
     height: 400px;
-    width: 300px; } }
+    width: 300px; }
+  #genre {
+    top: 20px; } }
 
 @media only screen and (min-width: 439px) and (max-width: 639px) {
   header {
     margin-right: 25.5%;
-    margin-left: 25.5%; } }
+    margin-left: 25.5%; }
+  #genre {
+    top: 20px; } }
 
 @media only screen and (min-width: 639px) and (max-width: 955px) {
   header {
@@ -165,7 +171,9 @@ iframe {
 @media only screen and (min-width: 955px) and (max-width: 1255px) {
   header {
     margin-right: 12.5%;
-    margin-left: 12.5%; } }
+    margin-left: 12.5%; }
+  #genre {
+    top: 20px; } }
 
 @media only screen and (min-width: 1255px) {
   header {
