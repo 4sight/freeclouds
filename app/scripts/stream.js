@@ -94,6 +94,7 @@ var Stream = Backbone.View.extend({
                 } else {
                   genres[examined] = -1;
                 };
+                console.log(shown);
             }
           examined++;
           } else {

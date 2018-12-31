@@ -104,6 +104,10 @@ button {
 form {
   display: inline; }
 
+#numberButton {
+  position: relative;
+  right: -10px; }
+
 #token {
   display: none; }
 
