@@ -397,7 +397,7 @@ and (max-width : 740px) {
   }
   #limit {
     position: relative;
-    top: 0px;
+    top: 24px;
     float: none;
     right: -100px;
   }
@@ -415,12 +415,24 @@ and (max-width : 740px) {
     top: -8px;
     left: -30px;
   }
+  #resetButton{
+    position: relative;
+    top: 26px;
+    right: 155px;
+  }
+  #numberButton{
+    left: 30px;
+  }
   #submit {
     position: relative;
     right: 50px;
   }
   #numberButton{
     left: 40px;
+  }
+  #wrapper{
+    position: relative;
+    top: 20px;
   }
 }
 
