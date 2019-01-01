@@ -263,9 +263,9 @@ iframe {
     left: -50px; }
   #limit {
     position: relative;
-    top: 0px;
+    top: 20px;
     float: none;
-    right: -70px; }
+    right: -45px; }
   #limitLineTwo {
     width: 300px;
     display: block;
@@ -281,8 +281,19 @@ iframe {
   #submit {
     position: relative;
     right: 50px; }
+  #searchButton {
+    position: relative;
+    top: 26px;
+    right: 155px; }
+  #resetButton {
+    position: relative;
+    top: 26px;
+    right: 155px; }
   #numberButton {
-    left: 30px; } }
+    left: 30px; }
+  #wrapper {
+    position: relative;
+    top: 20px; } }
 
 @media only screen and (min-width: 661px) and (max-width: 740px) {
   header {
