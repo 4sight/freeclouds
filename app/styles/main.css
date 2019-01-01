@@ -104,7 +104,7 @@ button {
   text-align: center;
   position: relative;
   top: -20px;
-  right: 60px; }
+  right: 160px; }
 
 #limit {
   float: right;
@@ -186,24 +186,32 @@ iframe {
     margin-left: 25.5%; }
   .authenticated {
     position: relative;
-    left: 40px; }
+    left: 100px; }
   #genre {
     width: 400px;
     top: 4px;
     margin-top: 15px;
     margin-bottom: 15px;
-    text-align: center; }
+    text-align: center;
+    position: relative;
+    left: -20px; }
   #limit {
     position: relative;
     top: 0px;
     float: none;
-    right: -40px; }
+    right: -100px; }
   #limitLineTwo {
     width: 300px;
     display: block;
     position: relative;
     top: -16px;
-    left: -45px; }
+    left: -25px; }
+  #limitLineThree {
+    width: 300px;
+    display: block;
+    position: relative;
+    top: -8px;
+    left: -30px; }
   #submit {
     position: relative;
     right: 50px; }
@@ -216,31 +224,96 @@ iframe {
     margin-left: 25.5%; }
   .authenticated {
     position: relative;
-    left: 40px; }
+    left: 100px; }
   #genre {
     width: 400px;
     top: 4px;
     margin-top: 15px;
     margin-bottom: 15px;
-    text-align: center; }
+    text-align: center;
+    position: relative;
+    left: -20px; }
   #limit {
     position: relative;
     top: 0px;
     float: none;
-    right: -40px; }
+    right: -100px; }
   #limitLineTwo {
     width: 300px;
     display: block;
     position: relative;
     top: -16px;
-    left: -45px; }
+    left: -25px; }
+  #limitLineThree {
+    width: 300px;
+    display: block;
+    position: relative;
+    top: -8px;
+    left: -30px; }
   #submit {
     position: relative;
     right: 50px; }
   #numberButton {
     left: 40px; } }
 
-@media only screen and (min-width: 660px) and (max-width: 955px) {
+@media only screen and (min-width: 660px) and (max-width: 740px) {
+  header {
+    margin-right: 25.5%;
+    margin-left: 25.5%; }
+  .authenticated {
+    position: relative;
+    left: 100px; }
+  #genre {
+    width: 400px;
+    top: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    left: -20px; }
+  #limit {
+    position: relative;
+    top: 0px;
+    float: none;
+    right: -100px; }
+  #limitLineTwo {
+    width: 300px;
+    display: block;
+    position: relative;
+    top: -16px;
+    left: -25px; }
+  #limitLineThree {
+    width: 300px;
+    display: block;
+    position: relative;
+    top: -8px;
+    left: -30px; }
+  #submit {
+    position: relative;
+    right: 50px; }
+  #numberButton {
+    left: 40px; } }
+
+@media only screen and (min-width: 740px) and (max-width: 830px) {
+  header {
+    margin-right: 17%;
+    margin-left: 17%;
+    text-align: center; }
+  .authenticated {
+    position: static; }
+  #genre {
+    position: static;
+    margin-top: 15px;
+    margin-bottom: 15px; }
+  #limit {
+    position: relative;
+    top: 0px;
+    float: none; }
+  #numberButton {
+    position: relative;
+    bottom: 8px; } }
+
+@media only screen and (min-width: 830px) and (max-width: 955px) {
   header {
     margin-right: 17%;
     margin-left: 17%;
