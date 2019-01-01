@@ -6,6 +6,7 @@ var Connect = Backbone.View.extend({
     },
 
   render: function(){
+    $('#welcome').hide();
     $('#wrapper').hide();
     $('#genre').hide();
     $('#limit').hide();
