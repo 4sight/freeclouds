@@ -32,7 +32,10 @@ var Stream = Backbone.View.extend({
     $('div#homeHalo').hide();
     $('.home').removeClass();
     if($(window).width() > 950){
-      $('#break').remove();
+      $('#breakForSubmitButton').remove();
+    };
+    if($(window).width() > 950){
+      $('breakForGenreSearchButton').remove();
     };
     SC.initialize({ client_id: setting.clientId });
     console.log(setting.clientId);
