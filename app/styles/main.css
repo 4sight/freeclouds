@@ -151,7 +151,7 @@ iframe {
     margin-left: 25.5%; }
   .authenticated {
     position: relative;
-    left: 100px; }
+    left: 60px; }
   #genre {
     width: 400px;
     top: 4px;
@@ -183,7 +183,7 @@ iframe {
   #numberButton {
     left: 10px; } }
 
-@media only screen and (min-width: 350px) and (max-width: 550px) {
+@media only screen and (min-width: 351px) and (max-width: 550px) {
   #home, #homeHalo {
     height: 400px;
     width: 300px; }
@@ -192,7 +192,7 @@ iframe {
     margin-left: 25.5%; }
   .authenticated {
     position: relative;
-    left: 100px; }
+    left: 60px; }
   #genre {
     width: 400px;
     top: 4px;
@@ -222,15 +222,15 @@ iframe {
     position: relative;
     right: 50px; }
   #numberButton {
-    left: 10px; } }
+    left: 30px; } }
 
-@media only screen and (min-width: 550px) and (max-width: 660px) {
+@media only screen and (min-width: 551px) and (max-width: 660px) {
   header {
     margin-right: 25.5%;
     margin-left: 25.5%; }
   .authenticated {
     position: relative;
-    left: 100px; }
+    left: 60px; }
   #genre {
     width: 400px;
     top: 4px;
@@ -260,9 +260,9 @@ iframe {
     position: relative;
     right: 50px; }
   #numberButton {
-    left: 10px; } }
+    left: 30px; } }
 
-@media only screen and (min-width: 660px) and (max-width: 740px) {
+@media only screen and (min-width: 661px) and (max-width: 740px) {
   header {
     margin-right: 25.5%;
     margin-left: 25.5%; }
@@ -300,7 +300,7 @@ iframe {
   #numberButton {
     left: 40px; } }
 
-@media only screen and (min-width: 740px) and (max-width: 830px) {
+@media only screen and (min-width: 741px) and (max-width: 830px) {
   header {
     margin-right: 17%;
     margin-left: 17%;
@@ -319,7 +319,7 @@ iframe {
     position: relative;
     bottom: 8px; } }
 
-@media only screen and (min-width: 830px) and (max-width: 955px) {
+@media only screen and (min-width: 831px) and (max-width: 950px) {
   header {
     margin-right: 17%;
     margin-left: 17%;
@@ -338,14 +338,14 @@ iframe {
     position: relative;
     top: -20px; } }
 
-@media only screen and (min-width: 955px) and (max-width: 1255px) {
+@media only screen and (min-width: 951px) and (max-width: 1250px) {
   header {
     margin-right: 12.5%;
     margin-left: 12.5%; }
   #genre {
     top: 20px; } }
 
-@media only screen and (min-width: 1255px) {
+@media only screen and (min-width: 1251px) {
   header {
     margin-right: 8%;
     margin-left: 8%; } }

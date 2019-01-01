@@ -191,7 +191,7 @@ and (max-width : 350px) {
   }
   .authenticated {
     position: relative;
-    left: 100px;
+    left: 60px;
   }
   #genre {
     width: 400px;
@@ -232,7 +232,7 @@ and (max-width : 350px) {
 }
 
 @media only screen 
-and (min-width : 350px)
+and (min-width : 351px)
 and (max-width : 550px) {
   #home, #homeHalo {
     height: 400px;
@@ -244,7 +244,7 @@ and (max-width : 550px) {
   }
   .authenticated {
     position: relative;
-    left: 100px;
+    left: 60px;
   }
   #genre {
     width: 400px;
@@ -280,12 +280,12 @@ and (max-width : 550px) {
     right: 50px;
   }
   #numberButton{
-    left: 40px - $offset0;
+    left: 30px;
   }
 }
 
 @media only screen 
-and (min-width : 550px)
+and (min-width : 551px)
 and (max-width : 660px) {
   header {
     margin-right: $header1;
@@ -293,7 +293,7 @@ and (max-width : 660px) {
   }
   .authenticated {
     position: relative;
-    left: 100px;
+    left: 60px;
   }
   #genre {
     width: 400px;
@@ -329,12 +329,12 @@ and (max-width : 660px) {
     right: 50px;
   }
   #numberButton{
-    left: 40px - $offset0;
+    left: 30px;
   }
 }
 
 @media only screen
-and (min-width : 660px)
+and (min-width : 661px)
 and (max-width : 740px) {
   header {
     margin-right: $header1;
@@ -383,7 +383,7 @@ and (max-width : 740px) {
 }
 
 @media only screen
-and (min-width : 740px)
+and (min-width : 741px)
 and (max-width : 830px) {
   header {
     margin-right: $header2;
@@ -410,8 +410,8 @@ and (max-width : 830px) {
 }
 
 @media only screen
-and (min-width : 830px)
-and (max-width : 955px) {
+and (min-width : 831px)
+and (max-width : 950px) {
   header {
     margin-right: $header2;
     margin-left: $header2;
@@ -437,8 +437,8 @@ and (max-width : 955px) {
 }
 
 @media only screen
-and (min-width : 955px)
-and (max-width : 1255px) {
+and (min-width : 951px)
+and (max-width : 1250px) {
   header {
     margin-right: $header3;
     margin-left: $header3;
@@ -449,7 +449,7 @@ and (max-width : 1255px) {
 }
 
 @media only screen
-and (min-width : 1255px) {
+and (min-width : 1251px) {
   header {
     margin-right: $header4;
     margin-left: $header4;
