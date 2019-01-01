@@ -2,6 +2,7 @@ var Stream = Backbone.View.extend({
   el: 'body',
 
   initialize: function (){
+    $('img#cloudAnimation').hide();
     $('div.authenticated').show();
     $('span.token').text(token);
     $.ajax({

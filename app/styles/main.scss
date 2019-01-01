@@ -178,62 +178,90 @@ $header3: 12.5%;
 $header4: 8%;
 
 @media only screen 
-and (min-width : 319px)
-and (max-width : 439px) {
-  // #welcome, #number {
-  //   margin: 0 auto;
-  //   float: none;
-  //   padding-top: 15px;
-  // }
-  header {
-    // text-align: center;
-    margin-right: $header0;
-    margin-left: $header0;
-  }
-  #genre {
-    top: 20px;
-  }
-}
-
-@media only screen 
-and (max-width : 539px) {
-  #home, #homeHalo {
-  height: 400px;
-  width: 300px;
-  }
-  #genre {
-    top: 20px;
-  }
-}
-
-@media only screen 
-and (min-width : 439px)
-and (max-width : 639px) {
+and (max-width : 350px) {
+  $("</input><button id='searchButton'>").replaceWith("</input><br><button id='searchButton'>");
   header {
     margin-right: $header1;
     margin-left: $header1;
   }
-.authenticated {
-    position: static;
+  #wrapper {
+    margin: 0 auto;
+  }
+  .authenticated {
+    position: relative;
+    left: 40px;
   }
   #genre {
-    position: static;
+    width: 400px;
+    top: 4px;
     margin-top: 15px;
     margin-bottom: 15px;
+    text-align: center;
   }
   #limit {
     position: relative;
     top: 0px;
     float: none;
+    right: -40px;
   }
-  #wrapper {
+  #limitLineTwo {
+    width: 300px;
+    display: block;
     position: relative;
-    top: -20px;
+    top: -16px;
+    left: -45px;
+  }
+  #submit {
+    position: relative;
+    right: 50px;
+  }
+  #numberButton{
+    left: 40px;
+  }
+}
+
+@media only screen 
+and (min-width : 350px)
+and (max-width : 660px) {
+  header {
+    margin-right: $header1;
+    margin-left: $header1;
+  }
+  .authenticated {
+    position: relative;
+    left: 40px;
+  }
+  #genre {
+    width: 400px;
+    top: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  #limit {
+    position: relative;
+    top: 0px;
+    float: none;
+    right: -40px;
+  }
+  #limitLineTwo {
+    width: 300px;
+    display: block;
+    position: relative;
+    top: -16px;
+    left: -45px;
+  }
+  #submit {
+    position: relative;
+    right: 50px;
+  }
+  #numberButton{
+    left: 40px;
   }
 }
 
 @media only screen
-and (min-width : 639px)
+and (min-width : 660px)
 and (max-width : 955px) {
   header {
     margin-right: $header2;
