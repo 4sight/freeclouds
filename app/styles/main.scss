@@ -453,9 +453,11 @@ and (max-width : 830px) {
     position: static;
   }
   #genre {
-    position: static;
+    position: relative;
     margin-top: 15px;
     margin-bottom: 15px;
+    left: 60px;
+    top: 0px;
   }
   #limit {
     position: relative;
@@ -470,12 +472,12 @@ and (max-width : 830px) {
   #searchButton{
     position: relative;
     top: 26px;
-    right: 155px;
+    right: 160px;
   }
   #resetButton{
     position: relative;
     top: 26px;
-    right: 155px;
+    right: 160px;
   }
   #numberButton{
     left: 1px;
@@ -498,14 +500,30 @@ and (max-width : 950px) {
     position: static;
   }
   #genre {
-    position: static;
+    position: relative;
     margin-top: 15px;
     margin-bottom: 15px;
+    left: 60px;
+    top: 0px;
   }
   #limit {
     position: relative;
-    top: 0px;
+    top: 12px;
     float: none;
+  }
+  #searchButton{
+    position: relative;
+    top: 26px;
+    right: 155px;
+  }
+  #resetButton{
+    position: relative;
+    top: 26px;
+    right: 155px;
+  }
+  #numberButton {
+    position: relative;
+    bottom: 20px;
   }
   #wrapper {
     position: relative;

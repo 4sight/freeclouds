@@ -31,6 +31,9 @@ var Stream = Backbone.View.extend({
     $('div#home').hide();
     $('div#homeHalo').hide();
     $('.home').removeClass();
+    if($(window).width() > 950){
+      $('#break').remove();
+    };
     SC.initialize({ client_id: setting.clientId });
     console.log(setting.clientId);
     $.ajax({
