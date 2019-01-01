@@ -204,9 +204,9 @@ and (max-width : 350px) {
   }
   #limit {
     position: relative;
-    top: 0px;
+    top: 24px;
     float: none;
-    right: -100px + $offset0;
+    right: -44px;
   }
   #limitLineTwo {
     width: 300px;
@@ -226,8 +226,22 @@ and (max-width : 350px) {
     position: relative;
     right: 50px;
   }
+  #searchButton{
+    position: relative;
+    top: 26px;
+    right: 155px;
+  }
+  #resetButton{
+    position: relative;
+    top: 26px;
+    right: 155px;
+  }
   #numberButton{
-    left: 40px - $offset0;
+    left: 30px;
+  }
+  #wrapper {
+    position: relative;
+    top: 20px;
   }
 }
 
@@ -257,9 +271,9 @@ and (max-width : 550px) {
   }
   #limit {
     position: relative;
-    top: 0px;
+    top: 24px;
     float: none;
-    right: -100px + $offset0;
+    right: -44px;
   }
   #limitLineTwo {
     width: 300px;
@@ -279,8 +293,22 @@ and (max-width : 550px) {
     position: relative;
     right: 50px;
   }
+  #searchButton{
+    position: relative;
+    top: 26px;
+    right: 155px;
+  }
+  #resetButton{
+    position: relative;
+    top: 26px;
+    right: 155px;
+  }
   #numberButton{
     left: 30px;
+  }
+  #wrapper {
+    position: relative;
+    top: 20px;
   }
 }
 
