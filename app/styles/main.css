@@ -143,6 +143,9 @@ iframe {
   margin-bottom: 20px; }
 
 @media only screen and (max-width: 350px) {
+  #home, #homeHalo {
+    height: 400px;
+    width: 300px; }
   header {
     margin-right: 25.5%;
     margin-left: 25.5%; }
@@ -174,7 +177,40 @@ iframe {
   #numberButton {
     left: 40px; } }
 
-@media only screen and (min-width: 350px) and (max-width: 660px) {
+@media only screen and (min-width: 350px) and (max-width: 550px) {
+  #home, #homeHalo {
+    height: 400px;
+    width: 300px; }
+  header {
+    margin-right: 25.5%;
+    margin-left: 25.5%; }
+  .authenticated {
+    position: relative;
+    left: 40px; }
+  #genre {
+    width: 400px;
+    top: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center; }
+  #limit {
+    position: relative;
+    top: 0px;
+    float: none;
+    right: -40px; }
+  #limitLineTwo {
+    width: 300px;
+    display: block;
+    position: relative;
+    top: -16px;
+    left: -45px; }
+  #submit {
+    position: relative;
+    right: 50px; }
+  #numberButton {
+    left: 40px; } }
+
+@media only screen and (min-width: 550px) and (max-width: 660px) {
   header {
     margin-right: 25.5%;
     margin-left: 25.5%; }
