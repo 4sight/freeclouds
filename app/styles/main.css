@@ -142,8 +142,7 @@ iframe {
   text-align: center;
   margin-bottom: 20px; }
 
-@media only screen and (max-width: 480px) {
-  /*$("</input><button id='searchButton'>").replaceWith("</input><br><button id='searchButton'>");*/
+@media only screen and (max-width: 350px) {
   header {
     margin-right: 25.5%;
     margin-left: 25.5%; }
@@ -175,7 +174,7 @@ iframe {
   #numberButton {
     left: 40px; } }
 
-@media only screen and (min-width: 480px) and (max-width: 660px) {
+@media only screen and (min-width: 350px) and (max-width: 660px) {
   header {
     margin-right: 25.5%;
     margin-left: 25.5%; }

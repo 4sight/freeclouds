@@ -179,7 +179,6 @@ $header4: 8%;
 
 @media only screen 
 and (max-width : 350px) {
-  $("</input><button id='searchButton'>").replaceWith("</input><br><button id='searchButton'>");
   header {
     margin-right: $header1;
     margin-left: $header1;
