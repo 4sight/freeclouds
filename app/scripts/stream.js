@@ -59,7 +59,7 @@ var Stream = Backbone.View.extend({
       var number = document.getElementById('number');
       var i;
       for (i = 0; i <= tracks.collection.length; i++){
-        if (tracks.collection[i] == null){
+        if (tracks.collection[i] == null || tracks.collection[i].origin == null){
           genres[i] = -1;
         } else {
           genres[i] = tracks.collection[i].origin.genre;
