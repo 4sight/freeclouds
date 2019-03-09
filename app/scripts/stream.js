@@ -104,11 +104,11 @@ var Stream = Backbone.View.extend({
                   };
                   console.log(shown);
               }
-            examined++;
-            } else {
-            genreArray[examined] = -1;
+              examined++;
+              } else {
+              genreArray[examined] = -1;
+              }
             }
-          }
         $('#wrapper').empty();
         console.log(examined + ' tracks scanned');
       });
@@ -127,7 +127,6 @@ var Stream = Backbone.View.extend({
               genres[i] = -1;
             } else {
               genres[i] = tracks.collection[i].origin.genre;
-              // console.log(genres);
             };
           };
           var examined = 0;
@@ -147,7 +146,8 @@ var Stream = Backbone.View.extend({
       };
     };
     document.getElementById('searchButton').addEventListener('click', search);
-    function reset (){
+    // Reset button
+    function reset(){
         $('#wrapper').empty();
         SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
           console.log(tracks);
@@ -158,7 +158,6 @@ var Stream = Backbone.View.extend({
               genres[i] = -1;
             } else {
               genres[i] = tracks.collection[i].origin.genre;
-              // console.log(genres);
             };
           };
           var examined = 0;
