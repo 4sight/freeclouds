@@ -6,7 +6,7 @@ var Stream = Backbone.View.extend({
     $('div.authenticated').show();
     $('span.token').text(token);
     $.ajax({
-        url: resourceHost + '/me',
+        url: 'https://cors.io/?' + resourceHost + '/me',
         crossOrigin: true, // New addition
         type: 'GET',       // New addition
         dataType: 'jsonp', // New addition
