@@ -7,6 +7,9 @@ var Stream = Backbone.View.extend({
     $('span.token').text(token);
     $.ajax({
         url: resourceHost + '/me',
+        crossOrigin: true, // New addition
+        type: 'GET',       // New addition
+        dataType: 'jsonp', // New addition
         data: {
           client_id: setting.clientId
         },
