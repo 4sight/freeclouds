@@ -62,8 +62,8 @@ var Stream = Backbone.View.extend({
         if (tracks.collection[i] == null || tracks.collection[i].origin == null){
           genres[i] = -1;
         } else {
+          // Put genres into array
           genres[i] = tracks.collection[i].origin.genre;
-          // console.log(genres);
         };
       };
       var examined = 0;
@@ -109,10 +109,10 @@ var Stream = Backbone.View.extend({
               genreArray[examined] = -1;
               }
             }
-        $('#wrapper').empty();
-        console.log(examined + ' tracks scanned');
-      });
-    } else {
+          $('#wrapper').empty();
+          console.log(examined + ' tracks scanned');
+        });
+      } else {
       // If the default stream is displayed, a blank search does nothing
       if (genreArray.length > 0){}
       // If search results are displayed, a blank search resets the window
