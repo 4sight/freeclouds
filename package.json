@@ -2,7 +2,7 @@
   "start": "node server.js",
   "private": true,
   "engines": {
-    "node": ">=0.10.0"
+    "node": "10.16.0"
   },
   "scripts": {
     "start": "node connect.js"
