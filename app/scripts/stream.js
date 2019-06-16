@@ -6,7 +6,7 @@ var Stream = Backbone.View.extend({
     $('div.authenticated').show();
     $('span.token').text(token);
     $.ajax({
-        url: 'https://cors.io/?' + resourceHost + '/me',
+        url: resourceHost + '/me',
         crossOrigin: true, // New addition
         type: 'GET',       // New addition
         dataType: 'jsonp', // New addition
@@ -21,7 +21,7 @@ var Stream = Backbone.View.extend({
           var container = $('span.user');
           if (response) {
             var spacesRemoved = response.username.replace(/\s+/g, '-');
-            container.append('<a href="https://cors.io/?https://soundcloud.com/">' + response.username + '</a>');
+            container.append('<a href="https://soundcloud.com/">' + response.username + '</a>');
           } else {
             container.text('An error occurred.');
           }
@@ -74,7 +74,7 @@ var Stream = Backbone.View.extend({
       while (shown < number.value && examined < tracks.collection.length){
         if (tracks.collection[examined].origin){
           SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
-            $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
+            $('#wrapper').append('<div class="sound">https://crossorigin.me/' + oembed.html + '</div>');
           });
           shown++;
         }
