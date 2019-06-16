@@ -21,7 +21,7 @@ var Stream = Backbone.View.extend({
           var container = $('span.user');
           if (response) {
             var spacesRemoved = response.username.replace(/\s+/g, '-');
-            container.append('<a href="https://soundcloud.com/">' + response.username + '</a>');
+            container.append('<a href="https://cors.io/?https://soundcloud.com/">' + response.username + '</a>');
           } else {
             container.text('An error occurred.');
           }
