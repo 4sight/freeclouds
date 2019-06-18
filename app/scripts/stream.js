@@ -5,11 +5,8 @@ var Stream = Backbone.View.extend({
     $('img#cloudAnimation').hide();
     $('div.authenticated').show();
     $('span.token').text(token);
-    $.ajax({
+    $.getJSON({
         url: resourceHost + '/me',
-        crossOrigin: true, // New addition
-        type: 'GET',       // New addition
-        dataType: 'jsonp', // New addition
         data: {
           client_id: setting.clientId
         },
@@ -74,7 +71,7 @@ var Stream = Backbone.View.extend({
       while (shown < number.value && examined < tracks.collection.length){
         if (tracks.collection[examined].origin){
           SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
-            $('#wrapper').append('<div class="sound">https://crossorigin.me/' + oembed.html + '</div>');
+            $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
           });
           shown++;
         }
