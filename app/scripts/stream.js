@@ -70,10 +70,9 @@ var Stream = Backbone.View.extend({
       var shown = 0;
       while (shown < number.value && examined < tracks.collection.length){
         if (tracks.collection[examined].origin){
-          SC.oEmbed(tracks.collection[examined].origin.uri, {}, function(oembed){
-            $('#wrapper').append('<div class="sound">' + oembed.html + '</div>');
-          });
-          shown++;
+	        $('#wrapper').append('<div class="sound"><iframe width=\"100%\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src="https://w.soundcloud.com/player/?visual=true&url=' + tracks.collection[examined].origin.uri + '"</div>');
+	        console.log(tracks.collection[examined].origin.uri);
+        	shown++;
         }
         examined++;
       }

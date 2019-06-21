@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
     <title>freeclouds</title>
-    <link rel='shortcut icon' href='https://freeclouds.herokuapp.com/favicon.ico'>
+    <link rel='shortcut icon' href='http://freeclouds.herokuapp.com/favicon.ico'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -17,8 +17,6 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <script src="//connect.soundcloud.com/sdk.js"></script>
-
     <!-- build:js scripts/vendor/modernizr.js -->
     <!-- <script src="../bower_components/modernizr/modernizr.js"></script> -->
     <!-- endbuild -->
@@ -58,9 +56,9 @@
       <a class='connect' href=''><div class='authenticate hidden'>
         Connect to your Soundcloud account
       </div></a>
+      <iframe width=\"100%\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F639894663&show_artwork=true\"></iframe>
     </div></div>
     <div id='wrapper'><img src='../images/cloud.gif' id='cloudAnimation' style='z-index: 0; position: absolute; left: 28%; height: 60%;'></div>
-
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src='scripts/dev/jquery.js'></script>
@@ -68,15 +66,11 @@
     <script src='scripts/dev/backbone.js'></script>
     <!-- endbower -->
     <!-- endbuild -->
-
     <script src="//connect.soundcloud.com/sdk.js"></script>
-
-    <!-- build:js scripts/main.js -->
     <script src='scripts/connect.js'></script>
     <script src='scripts/router.js'></script>
     <script src='scripts/stream.js'></script>
     <script src='scripts/soundcloudOath.js'></script>
     <!-- endbuild -->
-
 </body>
 </html>
