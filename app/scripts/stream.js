@@ -70,8 +70,8 @@ var Stream = Backbone.View.extend({
       var shown = 0;
       while (shown < number.value && examined < tracks.collection.length){
         if (tracks.collection[examined].origin){
-	        $('#wrapper').append('<div class="sound"><iframe width=\"100%\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src="https://w.soundcloud.com/player/?visual=true&url=' + tracks.collection[examined].origin.uri + '"</div>');
-        	shown++;
+          $('#wrapper').append('<div class="sound"><iframe width=\"100%\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src="https://w.soundcloud.com/player/?visual=true&url=' + tracks.collection[examined].origin.uri + '"</div>');
+          shown++;
         }
         examined++;
       }
@@ -79,6 +79,7 @@ var Stream = Backbone.View.extend({
     });
     console.log(genres);
     function search(){
+      $('#wrapper').empty();
       var genreArray = [];
       // If search field is not sumbitted blank...
       if (document.getElementById('genreInput').value != ''){
@@ -101,6 +102,7 @@ var Stream = Backbone.View.extend({
                 if (genreArray[examined] != -1){
                   $('#wrapper').append('<div class="sound"><iframe width=\"100%\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src="https://w.soundcloud.com/player/?visual=true&url=' + tracks.collection[examined].origin.uri + '"</div>');
                   shown++;
+                  console.log(genreArray);
                 } else {
                   genres[examined] = -1;
                 };
@@ -110,7 +112,6 @@ var Stream = Backbone.View.extend({
               genreArray[examined] = -1;
               }
             }
-          $('#wrapper').empty();
           console.log(examined + ' tracks scanned');
         });
             console.log(genreArray);
