@@ -87,10 +87,11 @@ var Stream = Backbone.View.extend({
         SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
           var examined = 0;
           var shown = 0;
+          var start = Date.now();
           // This line specifies how many tracks to show:
           var number = document.getElementById('number');
           console.log(tracks);
-          while (shown < number.value && examined < tracks.collection.length){        
+          while (shown < number.value && examined < tracks.collection.length && (Date.now() - start < 5000)){        
             // If the examined track has some metadata (is not "null")...
             if (tracks.collection[examined].origin){
               var genre = document.getElementById('genreInput').value;
@@ -114,7 +115,6 @@ var Stream = Backbone.View.extend({
             }
           console.log(examined + ' tracks scanned');
         });
-            console.log(genreArray);
       } else {
         // If the default stream is displayed, a blank search does nothing.
         if (genreArray.length > 0){}
