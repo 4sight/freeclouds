@@ -1,7 +1,7 @@
 var Stream = Backbone.View.extend({
   el: 'body',
 
-  initialize: function (){
+  initialize: function(){
     $('img#cloudAnimation').hide();
     $('div.authenticated').show();
     $('span.token').text(token);
@@ -45,8 +45,8 @@ var Stream = Backbone.View.extend({
           client_id: setting.clientId
         },
         beforeSend: function (xhr) {
-          xhr.setRequestHeader('Authorization', "OAuth " + token);
-          xhr.setRequestHeader('Accept',        "application/json");
+          xhr.setRequestHeader('Authorization', 'OAuth ' + token);
+          xhr.setRequestHeader('Accept',        'application/json');
       },
       success: function (response) {
           var nothing;
@@ -149,34 +149,27 @@ var Stream = Backbone.View.extend({
     document.getElementById('searchButton').addEventListener('click', search);
     // Reset button
     function reset(){
-        $('#wrapper').empty();
-        SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
-          console.log(tracks);
-          var number = document.getElementById('number');
-          var i;
-          for (i = 0; i <= tracks.collection.length; i++){
-            if (tracks.collection[i] == null){
-              genres[i] = -1;
-            } else {
-              genres[i] = tracks.collection[i].origin.genre;
-            };
-          };
-          var examined = 0;
-          var shown = 0;
-          while (shown < number.value && examined < tracks.collection.length){
-            if (tracks.collection[examined].origin){
-              $('#wrapper').append('<div class="sound"><iframe width=\"100%\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src="https://w.soundcloud.com/player/?visual=true&url=' + tracks.collection[examined].origin.uri + '"</div>');
-              shown++;
-            }
-            examined++;
+      SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
+        console.log(tracks);
+        var number = document.getElementById('number');
+        var i;
+        var examined = 0;
+        var shown = 0;
+        while (shown < number.value && examined < tracks.collection.length){
+          if (tracks.collection[examined].origin){
+            $('#wrapper').append('<div class="sound"><iframe width=\"100%\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src="https://w.soundcloud.com/player/?visual=true&url=' + tracks.collection[examined].origin.uri + '"</div>');
+            shown++;
           }
-          console.log(examined + ' tracks scanned');
+          examined++;
+        }
+        console.log(examined + ' tracks scanned');
       });
     };
     document.getElementById('resetButton').addEventListener('click', reset);
-    function submit(){
+
+  $('#submitButton').click(function(){
+    SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
       $('#wrapper').empty();
-      SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
       console.log(tracks);
       var number = document.getElementById('number').value;
       console.log(number);
@@ -199,8 +192,7 @@ var Stream = Backbone.View.extend({
         examined++;
       }
       console.log(examined + ' tracks scanned');
+      });
     });
-    }
-    document.getElementById('submitButton').addEventListener('click', submit);
   }
 });
