@@ -90,7 +90,6 @@ var Stream = Backbone.View.extend({
           var start = Date.now();
           // This line specifies how many tracks to show:
           var number = document.getElementById('number');
-          console.log(tracks);
           while (shown < number.value && examined < tracks.collection.length && (Date.now() - start < 5000)){        
             // If the examined track has some metadata (is not "null")...
             if (tracks.collection[examined].origin){
@@ -149,6 +148,7 @@ var Stream = Backbone.View.extend({
     document.getElementById('searchButton').addEventListener('click', search);
     // Reset button
     function reset(){
+      $('#wrapper').empty();
       SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks){
         console.log(tracks);
         var number = document.getElementById('number');
@@ -193,6 +193,6 @@ var Stream = Backbone.View.extend({
       }
       console.log(examined + ' tracks scanned');
       });
-    });
+  });
   }
 });

@@ -225,9 +225,9 @@ and (max-width : 350px) {
     top: -8px;
     left: -30px;
   }
-  #submit {
+  #submitButton {
     position: relative;
-    right: 50px;
+    right: -20px;
   }
   #searchButton{
     position: relative;
@@ -292,9 +292,9 @@ and (max-width : 550px) {
     top: -8px;
     left: -30px;
   }
-  #submit {
+  #submitButton {
     position: relative;
-    right: 50px;
+    right: -20px;
   }
   #searchButton{
     position: relative;
@@ -355,9 +355,9 @@ and (max-width : 660px) {
     top: -8px;
     left: -30px;
   }
-  #submit {
+  #submitButton {
     position: relative;
-    right: 50px;
+    right: -20px;
   }
   #searchButton{
     position: relative;
@@ -431,9 +431,9 @@ and (max-width : 740px) {
   #numberButton{
     left: 30px;
   }
-  #submit {
+  #submitButton {
     position: relative;
-    right: 50px;
+    right: -20px;
   }
   #numberButton{
     left: 40px;
@@ -467,11 +467,6 @@ and (max-width : 830px) {
     top: 20px;
     float: none;
   }
-  #submit {
-    position: relative;
-    top: 26px;
-    right: 155px;
-  }
   #searchButton{
     position: relative;
     top: 26px;
@@ -484,6 +479,10 @@ and (max-width : 830px) {
   }
   #numberButton{
     left: 1px;
+  }
+  #submitButton {
+    position: relative;
+    top: -16px;
   }
   #numberButton {
     position: relative;
@@ -542,6 +541,7 @@ and (max-width : 1250px) {
     margin-left: $header3;
   }
   #genre {
+    position: relative;
     top: 20px;
   }
 }
@@ -551,5 +551,18 @@ and (min-width : 1251px) {
   header {
     margin-right: $header4;
     margin-left: $header4;
+  }
+  #submitButton {
+    position: relative;
+    top: 0px;
+    right: 0px;
+  }
+  #genre {
+    position: relative;
+    right: 200px;
+  }
+  #limit {
+    position: relative;
+    left: -40px;
   }
 }

@@ -180,9 +180,9 @@ iframe {
     position: relative;
     top: -8px;
     left: -30px; }
-  #submit {
+  #submitButton {
     position: relative;
-    right: 50px; }
+    right: -20px; }
   #searchButton {
     position: relative;
     top: 26px;
@@ -232,9 +232,9 @@ iframe {
     position: relative;
     top: -8px;
     left: -30px; }
-  #submit {
+  #submitButton {
     position: relative;
-    right: 50px; }
+    right: -20px; }
   #searchButton {
     position: relative;
     top: 26px;
@@ -281,9 +281,9 @@ iframe {
     position: relative;
     top: -8px;
     left: -30px; }
-  #submit {
+  #submitButton {
     position: relative;
-    right: 50px; }
+    right: -20px; }
   #searchButton {
     position: relative;
     top: 26px;
@@ -340,9 +340,9 @@ iframe {
     right: 155px; }
   #numberButton {
     left: 30px; }
-  #submit {
+  #submitButton {
     position: relative;
-    right: 50px; }
+    right: -20px; }
   #numberButton {
     left: 40px; }
   #wrapper {
@@ -366,10 +366,6 @@ iframe {
     position: relative;
     top: 20px;
     float: none; }
-  #submit {
-    position: relative;
-    top: 26px;
-    right: 155px; }
   #searchButton {
     position: relative;
     top: 26px;
@@ -380,6 +376,9 @@ iframe {
     right: 160px; }
   #numberButton {
     left: 1px; }
+  #submitButton {
+    position: relative;
+    top: -16px; }
   #numberButton {
     position: relative;
     bottom: 8px; } }
@@ -421,9 +420,20 @@ iframe {
     margin-right: 12.5%;
     margin-left: 12.5%; }
   #genre {
+    position: relative;
     top: 20px; } }
 
 @media only screen and (min-width: 1251px) {
   header {
     margin-right: 8%;
-    margin-left: 8%; } }
+    margin-left: 8%; }
+  #submitButton {
+    position: relative;
+    top: 0px;
+    right: 0px; }
+  #genre {
+    position: relative;
+    right: 200px; }
+  #limit {
+    position: relative;
+    left: -40px; } }
