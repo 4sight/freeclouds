@@ -83,7 +83,6 @@ var Stream = Backbone.View.extend({
     }});
     console.log(genres);
     function searchFunction(){
-      $('#wrapper').empty();
       // If search field is not sumbitted blank...
       if (document.getElementById('genreInput').value != ''){
         // Get up to 200 tracks from the users' Soundcloud feed
@@ -91,6 +90,7 @@ var Stream = Backbone.View.extend({
           if (error) {
             window.alert('Soundcloud is temporarily denying freecloud&#39;s request for data. Please try again later.');
         } else { 
+          $('#wrapper').empty();
           var examined = 0;
           var shown = 0;
           var start = Date.now();
@@ -104,7 +104,7 @@ var Stream = Backbone.View.extend({
               // ...and if the track has a genre...
               if (genres[examined] != null){
                 // ...put the regex search results into genreArray.
-                genreArray[examined] = genres[examined].search(regex);
+                genreArray[examined] = genres[examined].toString().search(regex);
                 if (genreArray[examined] != -1){
                   $('#wrapper').append('<div class="sound"><iframe width=\"100%\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src="https://w.soundcloud.com/player/?visual=true&url=' + tracks.collection[examined].origin.uri + '"</div>');
                   shown++;
@@ -155,6 +155,7 @@ var Stream = Backbone.View.extend({
     document.getElementById('searchButton').addEventListener('click', searchFunction);
     // Reset button
     function reset(){
+      document.getElementById('genre').reset();
       $('#wrapper').empty();
       SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks, error){
         if (error) {
@@ -177,10 +178,10 @@ var Stream = Backbone.View.extend({
     };
   document.getElementById('resetButton').addEventListener('click', reset);
   $('#submitButton').click(function(){
-    var newNumber = document.getElementById('number').value;
+    var newNumber = document.getElementById('number');
     if (newNumber === shown){console.log('no change')}
     else if (newNumber < shown){
-      for (i = 0; i < (shown - newNumber); i++){
+      for (i = 0; i < (shown - newNumber.value); i++){
         $('#wrapper').children('div[class=sound]:last').remove();
         console.log('remove ' + i);
       }
@@ -196,14 +197,13 @@ var Stream = Backbone.View.extend({
           var shown = 0;
           var start = Date.now();
           // This line specifies how many tracks to show:
-          while (shown < newNumber && examined < tracks.collection.length && (Date.now() - start < 5000)){        
+          while (shown < newNumber.value && examined < tracks.collection.length && (Date.now() - start < 5000)){        
             // If the examined track has some metadata (is not "null")...
             if (tracks.collection[examined].origin){
               var genre = document.getElementById('genreInput').value;
               var regex = new RegExp(genre, 'ig');
               // ...and if the track has a genre...
               if (genres[examined] != null){
-                console.log(examined);
                 // ...put the regex search results into genreArray.
                 genreArray[examined] = genres[examined].toString().search(regex);
                 if (genreArray[examined] != -1){
@@ -212,7 +212,6 @@ var Stream = Backbone.View.extend({
                 } else {
                   genreArray[examined] = -1;
                 };
-              
               examined++;
               } else {
               genreArray[examined] = -1;
