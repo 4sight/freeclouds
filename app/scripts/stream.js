@@ -161,6 +161,8 @@ var Stream = Backbone.View.extend({
     document.getElementById('searchButton').addEventListener('click', searchFunction);
     // Reset button
     function reset(){
+      $('#number').val(20);
+      $('#genre').val('');
       document.getElementById('genre').reset();
       $('#wrapper').empty();
       SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks, error){
