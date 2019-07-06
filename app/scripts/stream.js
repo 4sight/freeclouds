@@ -58,7 +58,7 @@ var Stream = Backbone.View.extend({
     var shown = 0;
     SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks, error){
       if (error) {
-          window.alert('Soundcloud is temporarily denying freecloud&#39;s request for data. Please try again later.');
+          window.alert("Soundcloud is temporarily denying freecloud's request for data. Please try again later.");
       } else {
       console.log(tracks);
       var number = document.getElementById('number');
@@ -89,7 +89,7 @@ var Stream = Backbone.View.extend({
         console.log('search entered');
         SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks, error){
           if (error) {
-            window.alert('Soundcloud is temporarily denying freecloud&#39;s request for data. Please try again later.');
+            window.alert("Soundcloud is temporarily denying freecloud's request for data. Please try again later.");
         } else { 
           $('#wrapper').empty();
           var examined = 0;
@@ -130,7 +130,7 @@ var Stream = Backbone.View.extend({
           SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks, error){
             console.log('getting tracks');
             if (error) {
-              window.alert('Soundcloud is temporarily denying freecloud&#39;s request for data. Please try again later.');
+              window.alert("Soundcloud is temporarily denying freecloud's request for data. Please try again later.");
             } else {
             console.log(tracks);
             var number = document.getElementById('number');
@@ -161,13 +161,14 @@ var Stream = Backbone.View.extend({
     document.getElementById('searchButton').addEventListener('click', searchFunction);
     // Reset button
     function reset(){
+      // Set number of tracks displayed back to 20
       $('#number').val(20);
-      $('#genre').val('');
+      // Clear genre search term
       document.getElementById('genre').reset();
       $('#wrapper').empty();
       SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks, error){
         if (error) {
-          window.alert('Soundcloud is temporarily denying freecloud&#39;s request for data. Please try again later.');
+          window.alert("Soundcloud is temporarily denying freecloud's request for data. Please try again later.");
         } else {
         console.log(tracks);
         var number = document.getElementById('number');

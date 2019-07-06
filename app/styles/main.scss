@@ -124,7 +124,6 @@ button {
   top: -20px;
   right: 160px;
 }
-
 #limit {
   float: right;
   position: relative;
@@ -205,9 +204,21 @@ and (max-width : 350px) {
     position: relative;
     left: -20px - $offset0;
   }
+  #downloadable {
+    position: relative;
+    left: 20px;
+    top: 30px;
+  }
+  label {
+    display: block;
+    padding-left: 20px;
+    position: relative;
+    left: 3px;
+    bottom: 25px;
+  }
   #limit {
     position: relative;
-    top: 24px;
+    top: 20px;
     float: none;
     right: -44px;
   }
@@ -250,7 +261,7 @@ and (max-width : 350px) {
 
 @media only screen 
 and (min-width : 351px)
-and (max-width : 550px) {
+and (max-width : 422px) {
   #home, #homeHalo {
     height: 400px;
     width: 300px;
@@ -272,9 +283,21 @@ and (max-width : 550px) {
     position: relative;
     left: -20px - $offset0;
   }
+  #downloadable {
+    position: relative;
+    left: 26px;
+    top: 30px;
+  }
+  label {
+    display: block;
+    padding-left: 20px;
+    position: relative;
+    left: 3px;
+    bottom: 25px;
+  }
   #limit {
     position: relative;
-    top: 24px;
+    top: 16px;
     float: none;
     right: -44px;
   }
@@ -316,7 +339,7 @@ and (max-width : 550px) {
 }
 
 @media only screen 
-and (min-width : 551px)
+and (min-width : 423px)
 and (max-width : 660px) {
   header {
     margin-right: $header1;
@@ -335,9 +358,21 @@ and (max-width : 660px) {
     position: relative;
     left: -20px - $offset0;
   }
+  #downloadable {
+    position: relative;
+    left: 26px;
+    top: 32px;
+  }
+  label {
+    display: block;
+    padding-left: 20px;
+    position: relative;
+    left: 3px;
+    bottom: 18px;
+  }
   #limit {
     position: relative;
-    top: 20px;
+    top: 28px;
     float: none;
     right: -45px;
   }
@@ -398,6 +433,18 @@ and (max-width : 740px) {
     position: relative;
     left: -20px;
   }
+  #downloadable {
+    position: relative;
+    left: 24px;
+    top: 30px;
+  }
+  label {
+    display: block;
+    padding-left: 20px;
+    position: relative;
+    left: 3px;
+    bottom: 18px;
+  }
   #limit {
     position: relative;
     top: 24px;
@@ -446,6 +493,60 @@ and (max-width : 740px) {
 
 @media only screen
 and (min-width : 741px)
+and (max-width : 803px) {
+  header {
+    margin-right: $header2;
+    margin-left: $header2;
+    text-align: center;
+  }
+  .authenticated {
+    position: static;
+  }
+  #genre {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    left: 60px;
+    top: 0px;
+  }
+  label {
+    position: relative;
+    top: -1px;
+  }
+  #downloadable {
+    position: relative;
+    top: 16px;
+  }
+  #limit {
+    position: relative;
+    top: 20px;
+    float: none;
+  }
+  #submitButton {
+    position: relative;
+    bottom: 14px;
+  }
+  #searchButton{
+    position: relative;
+    top: 26px;
+    right: 160px;
+  }
+  #resetButton{
+    position: relative;
+    top: 26px;
+    right: 160px;
+  }
+  #numberButton{
+    left: 1px;
+  }
+  #numberButton {
+    position: relative;
+    bottom: 8px;
+  }
+}
+
+@media only screen
+and (min-width : 804px)
 and (max-width : 830px) {
   header {
     margin-right: $header2;
@@ -461,6 +562,14 @@ and (max-width : 830px) {
     margin-bottom: 15px;
     left: 60px;
     top: 0px;
+  }
+  label {
+    position: relative;
+    top: -1px;
+  }
+  #downloadable {
+    position: relative;
+    top: 16px;
   }
   #limit {
     position: relative;
@@ -479,10 +588,6 @@ and (max-width : 830px) {
   }
   #numberButton{
     left: 1px;
-  }
-  #submitButton {
-    position: relative;
-    top: -16px;
   }
   #numberButton {
     position: relative;
@@ -507,6 +612,14 @@ and (max-width : 950px) {
     margin-bottom: 15px;
     left: 60px;
     top: 0px;
+  }
+  label {
+    position: relative;
+    top: -1px;
+  }
+  #downloadable {
+    position: relative;
+    top: 12px;
   }
   #limit {
     position: relative;
@@ -543,6 +656,26 @@ and (max-width : 1250px) {
   #genre {
     position: relative;
     top: 20px;
+    margin-bottom: 15px;
+  }
+  label {
+    position: relative;
+    top: -1px;
+  }
+  #downloadable {
+    position: absolute;
+    top: 60px;
+    right: 40px;
+  }
+  #submitButton {
+    position: absolute;
+    top: 2px;
+    right: -60px;
+  }
+  #limit {
+    position: absolute;
+    top: 16px;
+    right: 90px;
   }
 }
 
@@ -561,8 +694,18 @@ and (min-width : 1251px) {
     position: relative;
     right: 200px;
   }
-  #limit {
+  label {
     position: relative;
-    left: -40px;
+    top: -1px;
+  }
+  #downloadable {
+    position: absolute;
+    top: 44px;
+    right: 40px;
+  }
+  #limit {
+    position: absolute;
+    top: 16px;
+    right: 40px;
   }
 }
