@@ -261,7 +261,7 @@ and (max-width : 350px) {
 
 @media only screen 
 and (min-width : 351px)
-and (max-width : 422px) {
+and (max-width : 378px) {
   #home, #homeHalo {
     height: 400px;
     width: 300px;
@@ -294,6 +294,85 @@ and (max-width : 422px) {
     position: relative;
     left: 3px;
     bottom: 25px;
+  }
+  #limit {
+    position: relative;
+    top: 16px;
+    float: none;
+    right: -44px;
+  }
+  #limitLineTwo {
+    width: 300px;
+    display: block;
+    position: relative;
+    top: -16px;
+    left: -25px;
+  }
+  #limitLineThree {
+    width: 300px;
+    display: block;
+    position: relative;
+    top: -8px;
+    left: -30px;
+  }
+  #submitButton {
+    position: relative;
+    right: -20px;
+  }
+  #searchButton{
+    position: relative;
+    top: 26px;
+    right: 155px;
+  }
+  #resetButton{
+    position: relative;
+    top: 26px;
+    right: 155px;
+  }
+  #numberButton{
+    left: 30px;
+  }
+  #wrapper {
+    position: relative;
+    top: 20px;
+  }
+}
+
+@media only screen 
+and (min-width : 379px)
+and (max-width : 422px) {
+  #home, #homeHalo {
+    height: 400px;
+    width: 300px;
+  }
+  header {
+    margin-right: $header1;
+    margin-left: $header1;
+  }
+  .authenticated {
+    position: relative;
+    left: 60px;
+  }
+  #genre {
+    width: 400px;
+    top: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    left: -20px - $offset0;
+  }
+  #downloadable {
+    position: relative;
+    left: 14px;
+    top: 24px;
+  }
+  label {
+    display: block;
+    padding-left: 20px;
+    position: relative;
+    left: 3px;
+    bottom: 18px;
   }
   #limit {
     position: relative;
