@@ -85,7 +85,7 @@ var Stream = Backbone.View.extend({
     function searchFunction(){
       // If search field is not sumbitted blank...
       if (document.getElementById('genreInput').value != ''){
-        // Get up to 200 tracks from the users' Soundcloud feed
+        // ...get up to 200 tracks from the users' Soundcloud feed
         console.log('search entered');
         SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks, error){
           if (error) {
@@ -186,87 +186,92 @@ var Stream = Backbone.View.extend({
       }});
     };
     $(document).ready(function(){
-      $('#downloadable').click(function downloadable(){
-      var checkbox = $(this).find(':checkbox'),
-          checked = checkbox.is(':checked');
-      if (checked){
-        // If search field is not sumbitted blank...
-        if (document.getElementById('genreInput').value != ''){
-        // Get up to 200 tracks from the users' Soundcloud feed
-        console.log('search entered');
-        SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks, error){
-          if (error) {
-            window.alert("Soundcloud is temporarily denying freecloud's request for data. Please try again later.");
+      $('#downloadable').click(function(){
+        var checkbox = $(this).find(':checkbox');
+        var checked = checkbox.is(':checked');
+        checkbox.prop('checked', !checked);
+        $('#downloadable :checkbox').click(function() {
+          $(this).parent('div').click();
+        });
+        // If the checkbox is checked...
+        if (document.getElementById('checkbox').checked){
+          // ...and if the search field is not sumbitted blank...
+          if (document.getElementById('genreInput').value != ''){
+            // ...get up to 200 tracks from the users' Soundcloud feed
+            console.log('search entered');
+            SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks, error){
+              if (error) {
+                window.alert("Soundcloud is temporarily denying freecloud's request for data. Please try again later.");
+              } else {
+                $('#wrapper').empty();
+                var examined = 0;
+                var shown = 0;
+                var start = Date.now();
+                // This line specifies how many tracks to show:
+                var number = document.getElementById('number');
+                while (shown < number.value && examined < tracks.collection.length && (Date.now() - start < 5000)){        
+                  // If the examined track has some metadata (is not "null")...
+                  if (tracks.collection[examined].origin){
+                    var genre = document.getElementById('genreInput').value;
+                    var regex = new RegExp(genre, 'ig');
+                    // ...and if the track has a genre...
+                    if (genres[examined] != null){
+                      // ...put the regex search results into genreArray.
+                      genreArray[examined] = genres[examined].toString().search(regex);
+                      if (genreArray[examined] != -1 && tracks.collection[examined].origin.downloadable == true){
+                        $('#wrapper').append('<div class="sound"><iframe width=\"100%\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src="https://w.soundcloud.com/player/?visual=true&url=' + tracks.collection[examined].origin.uri + '"</div>');
+                        shown++;
+                      } else {
+                        genres[examined] = -1;
+                      };
+                    }
+                    examined++;
+                    } else {
+                    genreArray[examined] = -1;
+                    }
+                  }
+                console.log(examined + ' tracks scanned');
+              }
+            });
           } else {
-            $('#wrapper').empty();
-            var examined = 0;
-            var shown = 0;
-            var start = Date.now();
-            // This line specifies how many tracks to show:
-            var number = document.getElementById('number');
-            while (shown < number.value && examined < tracks.collection.length && (Date.now() - start < 5000)){        
-              // If the examined track has some metadata (is not "null")...
-              if (tracks.collection[examined].origin){
-                var genre = document.getElementById('genreInput').value;
-                var regex = new RegExp(genre, 'ig');
-                // ...and if the track has a genre...
-                if (genres[examined] != null){
-                  // ...put the regex search results into genreArray.
-                  genreArray[examined] = genres[examined].toString().search(regex);
-                  if (genreArray[examined] != -1 && tracks.collection[examined].origin.downloadable == true){
+            // If the default stream is displayed, a blank search does nothing.
+            if (genreArray.length > 0){console.log('blank search, no action taken');}
+            // If search results are displayed, a blank search refreshes the view.
+            else {
+              console.log('refreshing view')
+              $('#wrapper').empty();
+              SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks, error){
+                console.log('getting tracks');
+                if (error) {
+                  window.alert("Soundcloud is temporarily denying freecloud's request for data. Please try again later.");
+                } else {
+                console.log(tracks);
+                var number = document.getElementById('number');
+                var i;
+                for (i = 0; i <= tracks.collection.length; i++){
+                console.log(i);
+                  if (tracks.collection[i] == null || tracks.collection[i].origin == null){
+                    genres[i] = -1;
+                  } else {
+                    genres[i] = tracks.collection[i].origin.genre;
+                  };
+                };
+                var examined = 0;
+                var shown = 0;
+                var start = Date.now();
+                while (shown < number.value && examined < tracks.collection.length && (Date.now() - start < 5000)){
+                  if (tracks.collection[examined].origin && tracks.collection[examined].origin.downloadable == true){
                     $('#wrapper').append('<div class="sound"><iframe width=\"100%\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src="https://w.soundcloud.com/player/?visual=true&url=' + tracks.collection[examined].origin.uri + '"</div>');
                     shown++;
-                  } else {
-                    genres[examined] = -1;
-                  };
+                  }
+                  examined++;
                 }
-                examined++;
-                } else {
-                genreArray[examined] = -1;
-                }
-              }
-            console.log(examined + ' tracks scanned');
-          }});
-      } else {
-        // If the default stream is displayed, a blank search does nothing.
-        if (genreArray.length > 0){console.log('blank search, no action taken');}
-        // If search results are displayed, a blank search refreshes the view.
-        else {
-          console.log('refreshing view')
-          $('#wrapper').empty();
-          SC.get('/me/activities?oauth_token=' + token, {limit: 200}, function(tracks, error){
-            console.log('getting tracks');
-            if (error) {
-              window.alert("Soundcloud is temporarily denying freecloud's request for data. Please try again later.");
-            } else {
-            console.log(tracks);
-            var number = document.getElementById('number');
-            var i;
-            for (i = 0; i <= tracks.collection.length; i++){
-            console.log(i);
-              if (tracks.collection[i] == null || tracks.collection[i].origin == null){
-                genres[i] = -1;
-              } else {
-                genres[i] = tracks.collection[i].origin.genre;
-              };
-            };
-            var examined = 0;
-            var shown = 0;
-            var start = Date.now();
-            while (shown < number.value && examined < tracks.collection.length && (Date.now() - start < 5000)){
-              if (tracks.collection[examined].origin && tracks.collection[examined].origin.downloadable == true){
-                $('#wrapper').append('<div class="sound"><iframe width=\"100%\" height=\"400\" scrolling=\"no\" frameborder=\"no\" src="https://w.soundcloud.com/player/?visual=true&url=' + tracks.collection[examined].origin.uri + '"</div>');
-                shown++;
-              }
-              examined++;
-            }
-            console.log(examined + ' tracks scanned');
-          }});
-        }};
-      } else {
+                console.log(examined + ' tracks scanned');
+              }});
+            }};
+          } else {
         searchFunction();
       }
-    checkbox.prop("checked", !checked);
     })
   });
   document.getElementById('resetButton').addEventListener('click', reset);
