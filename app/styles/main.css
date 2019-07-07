@@ -163,19 +163,19 @@ iframe {
     text-align: center;
     position: relative;
     left: -50px; }
-  #downloadable {
-    position: relative;
-    left: 20px;
-    top: 30px; }
   label {
     display: block;
     padding-left: 20px;
     position: relative;
-    left: 3px;
-    bottom: 25px; }
+    left: 30px;
+    bottom: -18px;
+    text-indent: -20px; }
+  #checkbox {
+    position: relative;
+    top: 10px; }
   #limit {
     position: relative;
-    top: 20px;
+    top: 28px;
     float: none;
     right: -44px; }
   #limitLineTwo {
@@ -225,19 +225,19 @@ iframe {
     text-align: center;
     position: relative;
     left: -50px; }
-  #downloadable {
-    position: relative;
-    left: 26px;
-    top: 30px; }
   label {
     display: block;
     padding-left: 20px;
     position: relative;
-    left: 3px;
-    bottom: 25px; }
+    left: 26px;
+    top: 20px;
+    text-indent: -20px; }
+  #checkbox {
+    position: relative;
+    top: 10px; }
   #limit {
     position: relative;
-    top: 16px;
+    top: 24px;
     float: none;
     right: -44px; }
   #limitLineTwo {
@@ -287,19 +287,16 @@ iframe {
     text-align: center;
     position: relative;
     left: -50px; }
-  #downloadable {
-    position: relative;
-    left: 14px;
-    top: 24px; }
   label {
     display: block;
     padding-left: 20px;
     position: relative;
-    left: 3px;
-    bottom: 18px; }
+    left: 26px;
+    top: 20px;
+    text-indent: -20px; }
   #limit {
     position: relative;
-    top: 16px;
+    top: 28px;
     float: none;
     right: -44px; }
   #limitLineTwo {
@@ -346,16 +343,13 @@ iframe {
     text-align: center;
     position: relative;
     left: -50px; }
-  #downloadable {
-    position: relative;
-    left: 26px;
-    top: 32px; }
   label {
     display: block;
     padding-left: 20px;
     position: relative;
-    left: 3px;
-    bottom: 18px; }
+    left: 26px;
+    top: 20px;
+    text-indent: -20px; }
   #limit {
     position: relative;
     top: 28px;
@@ -405,19 +399,16 @@ iframe {
     text-align: center;
     position: relative;
     left: -20px; }
-  #downloadable {
-    position: relative;
-    left: 24px;
-    top: 30px; }
   label {
     display: block;
     padding-left: 20px;
     position: relative;
-    left: 3px;
-    bottom: 18px; }
+    left: 36px;
+    top: 20px;
+    text-indent: -20px; }
   #limit {
     position: relative;
-    top: 24px;
+    top: 26px;
     float: none;
     right: -80px; }
   #limitLineTwo {
@@ -465,11 +456,12 @@ iframe {
     left: 60px;
     top: 0px; }
   label {
+    display: block;
+    padding-left: 20px;
     position: relative;
-    top: -1px; }
-  #downloadable {
-    position: relative;
-    top: 16px; }
+    left: -6px;
+    top: 16px;
+    text-indent: -20px; }
   #limit {
     position: relative;
     top: 20px;
@@ -505,11 +497,12 @@ iframe {
     left: 60px;
     top: 0px; }
   label {
+    display: block;
+    padding-left: 20px;
     position: relative;
-    top: -1px; }
-  #downloadable {
-    position: relative;
-    top: 16px; }
+    left: -6px;
+    top: 16px;
+    text-indent: -20px; }
   #limit {
     position: relative;
     top: 20px;
@@ -526,7 +519,10 @@ iframe {
     left: 1px; }
   #numberButton {
     position: relative;
-    bottom: 8px; } }
+    bottom: 8px; }
+  #submitButton {
+    position: relative;
+    top: -10px; } }
 
 @media only screen and (min-width: 831px) and (max-width: 950px) {
   header {
@@ -542,14 +538,15 @@ iframe {
     left: 60px;
     top: 0px; }
   label {
+    display: block;
+    padding-left: 20px;
     position: relative;
-    top: -1px; }
-  #downloadable {
-    position: relative;
-    top: 12px; }
+    left: -6px;
+    top: 16px;
+    text-indent: -20px; }
   #limit {
     position: relative;
-    top: 12px;
+    top: 18px;
     float: none; }
   #searchButton {
     position: relative;
@@ -562,9 +559,9 @@ iframe {
   #numberButton {
     position: relative;
     bottom: 1px; }
-  #wrapper {
+  #submitButton {
     position: relative;
-    top: -20px; } }
+    top: -10px; } }
 
 @media only screen and (min-width: 951px) and (max-width: 1250px) {
   header {
@@ -575,12 +572,9 @@ iframe {
     top: 20px;
     margin-bottom: 15px; }
   label {
-    position: relative;
-    top: -1px; }
-  #downloadable {
     position: absolute;
     top: 60px;
-    right: 40px; }
+    right: 30px; }
   #submitButton {
     position: absolute;
     top: 2px;
@@ -595,15 +589,16 @@ iframe {
     margin-right: 8%;
     margin-left: 8%; }
   #submitButton {
-    position: relative;
-    top: 0px;
-    right: 0px; }
+    position: absolute;
+    top: 2px;
+    right: -60px; }
+  label {
+    position: absolute;
+    top: 50px;
+    left: 320px; }
   #genre {
     position: relative;
     right: 200px; }
-  label {
-    position: relative;
-    top: -1px; }
   #downloadable {
     position: absolute;
     top: 44px;
@@ -611,4 +606,6 @@ iframe {
   #limit {
     position: absolute;
     top: 16px;
-    right: 40px; } }
+    right: 150px; }
+  #wrapper {
+    margin-top: 20px; } }
