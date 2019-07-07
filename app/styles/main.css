@@ -591,7 +591,7 @@ iframe {
   #submitButton {
     position: absolute;
     top: 2px;
-    right: -60px; }
+    right: -70px; }
   label {
     position: absolute;
     top: 50px;
@@ -606,6 +606,6 @@ iframe {
   #limit {
     position: absolute;
     top: 16px;
-    right: 150px; }
+    right: 160px; }
   #wrapper {
     margin-top: 20px; } }
