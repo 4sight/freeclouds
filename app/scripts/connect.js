@@ -13,6 +13,7 @@ var Connect = Backbone.View.extend({
     $('span#welcome').hide();
     $('span#forms').hide();
     $('label').hide();
+    $('#downloadable').hide();
     $('div.authenticate').mouseenter(function(){
       $('div.authenticate').addClass('connectHover');
     });
